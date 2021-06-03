@@ -1,6 +1,6 @@
 bottle==0.12.18
 scikit-learn==0.24.2
-json==2.0.9
+json
 pandas==1.2.4
 requests==2.25.1
 numpy==1.20.3
