@@ -34,8 +34,6 @@ class TextVectorizer(TransformerMixin):
 with open(r'data/model.sav', 'rb') as file:
     MODEL = pickle.load(file)
 
-# model
-
 
 def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
@@ -72,20 +70,19 @@ def bot_endpoint():
             "sender_action": "mark_seen"
         }
         response = send_to_messenger(ctx)
-        ctx = {
-            "recipient": {
-                "id": user_id,
-            },
-            "sender_action": "typing_on"
-        }
-        response = send_to_messenger(ctx)
-
         # Get contents of the recieved request
-        message_text = body['entry'][0]['messaging'][0]['message']['text']
         if 'message' not in body['entry'][0]['messaging'][0]:
             # Webhook that it has received is not a message. Return to avoid a 500 error.
             return ''
-        if user_id != page_id:
+        message_text = body['entry'][0]['messaging'][0]['message']['text']
+        if user_id != page_id:            
+            ctx = {
+                "recipient": {
+                    "id": user_id,
+                },
+                "sender_action": "typing_on"
+            }
+            response = send_to_messenger(ctx)
             message_contents = find_response(message_text)
             ctx = {
                 'recipient': {"id": user_id, },
@@ -94,7 +91,13 @@ def bot_endpoint():
                     "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
                 }
             }
-            # find_response(message_text)
+            response = send_to_messenger(ctx)
+            ctx = {
+                "recipient": {
+                    "id": user_id,
+                    },
+                    "sender_action": "typing_off"
+                }
             response = send_to_messenger(ctx)
         return ''
 
