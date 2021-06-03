@@ -9,8 +9,6 @@ import numpy as np
 import spacy
 import pickle
 
-with open(r'data/model.sav', 'rb') as file:
-    MODEL = pickle.load(file)
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 NLP = spacy.load("data\en_core_web_md-3.0.0")
 GRAPH_URL = "https://graph.facebook.com/v10.0"
@@ -32,6 +30,9 @@ class TextVectorizer(TransformerMixin):
 
     def fit(self, X, y=None, **fit_params):
         return self
+
+with open(r'data/model.sav', 'rb') as file:
+    MODEL = pickle.load(file)
 
 # model
 
