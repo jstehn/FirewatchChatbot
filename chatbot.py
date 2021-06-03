@@ -62,6 +62,8 @@ def bot_endpoint():
     else:
         # Receive the message and update the status to be typing
         body = json.loads(request.body.read())
+        user_id = body['entry'][0]['messaging'][0]['sender']['id']
+        page_id = body['entry'][0]['id']
         ctx = {
             "recipient": {
                 "id": user_id,
@@ -78,8 +80,6 @@ def bot_endpoint():
         response = send_to_messenger(ctx)
 
         # Get contents of the recieved request
-        user_id = body['entry'][0]['messaging'][0]['sender']['id']
-        page_id = body['entry'][0]['id']
         message_text = body['entry'][0]['messaging'][0]['message']['text']
         if 'message' not in body['entry'][0]['messaging'][0]:
             # Webhook that it has received is not a message. Return to avoid a 500 error.
