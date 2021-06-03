@@ -2,7 +2,6 @@
 from sklearn.base import TransformerMixin
 import json
 import requests
-import pandas as pd
 from bottle import debug, request, route, run
 import pandas as pd
 import numpy as np
