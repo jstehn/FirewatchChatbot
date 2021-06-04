@@ -59,7 +59,7 @@ def find_response(user_message):
 
 def send_to_messenger(ctx):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
-    ctx = json.dumps(ctx)
+    #ctx = json.dumps(ctx)
     print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
     print(response.text)
@@ -106,14 +106,22 @@ def bot_endpoint():
             # }
             # response = send_to_messenger(ctx)
             message_contents = find_response(message_text)
+            # ctx = {
+            #     'recipient': {"id": user_id},
+            #     'message': {
+            #         "text": message_contents[0],
+            #         "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
+            #     }
+            # }
             ctx = {
-                "messaging_type": "RESPONSE",
-                'recipient': {"id": user_id},
-                'message': {
-                    "text": message_contents[0],
-                    "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
-                }
+                      "recipient": {
+                        'id': user_id,
+                      },
+                      "message": {
+                         'text': "He is the best!",
+                      }
             }
+
             send_to_messenger(ctx)
             # ctx = {
             #     "recipient": {
