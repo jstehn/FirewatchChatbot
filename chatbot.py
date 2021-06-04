@@ -13,10 +13,10 @@ import os
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
+NLP = spacy.load('data/en_core_web_md')
 
 class TextVectorizer(TransformerMixin):
     def transform(self, X, **transform_params):
-        NLP = spacy.load('data/en_core_web_md')
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
         # Iterate over the sentences
         for idx, sentence in enumerate(X):
