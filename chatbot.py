@@ -41,7 +41,7 @@ def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
         return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
     else:
-        # return [BOT_RESPONSES["Response"][MODEL.predict([user_message])[0]],df["Links"][MODEL.predict([user_message])[0]]]
+        return [BOT_RESPONSES["Response"][MODEL.predict([user_message])[0]], BOT_RESPONSES["Links"][MODEL.predict([user_message])[0]]]
         return ["Sorry, I don't understand: " + user_message, ["Help"]]
 
 
