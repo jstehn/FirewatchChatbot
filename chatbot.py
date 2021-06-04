@@ -41,7 +41,11 @@ def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
         return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
     else:
-        return [BOT_RESPONSES["Response"][MODEL.predict([user_message])[0]], BOT_RESPONSES["Links"][MODEL.predict([user_message])[0]]]
+        category = MODEL.predict([user_message])[0]
+        print("Message:", user_message)
+        print("Predicted category:", category)
+        print(BOT_RESPONSES["Response"][category])
+        return [BOT_RESPONSES["Response"][category], BOT_RESPONSES["Links"][category]]
         return ["Sorry, I don't understand: " + user_message, ["Help"]]
 
 
