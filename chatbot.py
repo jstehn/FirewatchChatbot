@@ -101,13 +101,13 @@ def bot_endpoint():
             # 2) It's wit$bye
             fb_nlp = body['entry'][0]['messaging'][0]['message']['nlp']['traits']
             if "wit$greetings" in fb_nlp:
-                if fb_nlp["wit$greetings"]["value"] == "true" and fb_nlp["wit$greetings"]["confidence"] >= 0.95:
+                if fb_nlp["wit$greetings"][0]["value"] == "true" and fb_nlp["wit$greetings"][0]["confidence"] >= 0.95:
                     message_contents = ["Hello, there!",["Help"]]
             if "wit$bye" in fb_nlp:
-                if fb_nlp["wit$bye"]["value"] == "true" and fb_nlp["wit$bye"]["confidence"] >= 0.95:
+                if fb_nlp["wit$bye"][0]["value"] == "true" and fb_nlp["wit$bye"][0]["confidence"] >= 0.95:
                     message_contents = ["Goodbye!",["Help"]]
             if "wit$thanks" in fb_nlp:
-                if fb_nlp["wit$thanks"]["value"] == "true" and fb_nlp["wit$thanks"]["confidence"] >= 0.95:
+                if fb_nlp["wit$thanks"][0]["value"] == "true" and fb_nlp["wit$thanks"][0]["confidence"] >= 0.95:
                     message_contents = ["You're welcome!",["Help"]]   
             ctx = {
                 "recipient": {
