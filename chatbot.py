@@ -99,7 +99,7 @@ def bot_endpoint():
         if 'message' not in body['entry'][0]['messaging'][0]:
             # Webhook that it has received is not a message. Return to avoid a 500 error.
             return ''
-        user_message = body['entry'][0]['messaging'][0]['message']['text']
+        user_message = body['entry'][0]['messaging'][0]['message']
         if user_id != page_id:
             ctx = {
                 "recipient": {
@@ -108,7 +108,7 @@ def bot_endpoint():
                 "sender_action": "typing_on"
             }
             send_to_messenger(ctx)
-            message_contents = find_response(message_text)
+            message_contents = find_response(user_message)
             # Cases that we care about:
             # 1) It's a wit$greetings
             # 2) It's wit$bye             
