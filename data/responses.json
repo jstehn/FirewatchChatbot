@@ -16,7 +16,7 @@
         "What about wildlife":"When a wildfire happens, initially the older and very young wildlife that cannot outrun it die in the flames. But most of the death occurs after the wildfire is over. The wildfire creates a new terrain that is open areas without shelter or food sources creating an opportunity for invasive species to take advantage of the opportunity which can be harmful for the habitat. Despite the casualties, wildfires are part of a healthy ecosystem and the natural cycle. Many trees depend on the fires for their life cycle.\n\nHowever, the recent high-intensity fires have proven too much for many of the trees to withstand, and what used to be a necessary part of a healthy ecosystem have instead started devastating it. As large swathes of forest burn, we can no longer count on the forest to regenerate. For more information on wildlife, go to: https:\/\/www.nationalforests.org\/blog\/what-happens-to-wildlife-during-a-wildfire For more information on trees, go to: https:\/\/insideclimatenews.org\/news\/21122016\/california-forests-wildfires-climate-change\/",
         "How does \ud83d\udd25 spread?":"How fast a wildfire spreads depends on several environmental factors. Santa Ana winds and other high winds make it easier for the fire to spread. In addition if the fire is burning uphill or there is a lot of dead, dry vegetation, the fire will also spread faster. Wildfires can move as fast as 7 miles per hour in forests and up to 14 miles per hour in grasslands. While that might not seem fast, it\u2019s important to note that it\u2019s extremely difficult to outrun a fire. For more information, go to: https:\/\/www.forbes.com\/sites\/startswithabang\/2017\/09\/06\/the-terrifying-physics-of-how-wildfires-spread-so-fast\/?sh=1ce0199b7791 \r\nTo see an example of how fast a fire can spread, go to: https:\/\/www.youtube.com\/watch?v=hRDM3ir3l5M\r\nFor a timeline of fire spread, go to: https:\/\/www.disastercompany.com\/quickly-fire-spread\/",
         "What is \"contained\"":"Containment, normally expressed as a percentage, indicates how much of the fire has been enclosed by a control line. A wildfire with 25% containment means control lines have been completed around 25% of the fire\u2019s perimeter.\r\nControl lines are constructed or natural barriers used to stop a wildfire from spreading, also called firebreaks or fuel breaks. Firefighters sometimes create them with controlled burns to remove fuel before the wildfire reaches it.\r\nContained fires have been fully enclosed by control lines, which also are complete around any related spot fires. The fire may still be burning but is not likely to spread.\r\nControlled fires are not only contained, but have been burned out along the interior of the control line with any hot spots threatening the line cooled down. The control lines are expected to halt the spread of the fire under reasonable conditions.",
-        "Methods to prevent & put out":"Wildfires are dealt with in two ways: Prevention, or limiting the ability of a devastating wildfire to start, and Suppression, or controlling the damage in case a fire does start. Since a fire needs oxygen, fuel, and a spark to start and grow, it follows that any plan would have to revolve around those three things. \r\nTo limit fuel, we use prescribed fires, which are small fires that get rid of highly flammable vegetation to keep fuel from building up. We also focus on climate change, which increases temperatures, drying out the air, land, and plants, and making it easier for a spark to take. Since the sparks that start the fires are mostly provided by humans, it\u2019s important to inform the public on fire safety and improve power line infrastructure.\r\nFor suppression, we target Oxygen and fuel supply. The most well-known method is dumping water on the fires, which deprives it of Oxygen. Firefighting foam is also used for this. However, the majority of techniques are used to deprive the fire of fuel. A boundary can be created by targeting unburned areas in the path of the fire with back-burning, vegetation removal, or dousing the land with fire retardant or water. All of these techniques either limit the ability of fuel to catch on fire or remove the fuel entirely.\r\nFor more information on prevention, go to: https:\/\/www.fire.ca.gov\/programs\/resource-management\/resource-protection-improvement\/vegetation-management-program\/\r\nFor more information on suppression, go to: https:\/\/www.enr.gov.nt.ca\/en\/services\/wildfire-operations\/suppressing-wildland-fires#:~:text=To%20put%20out%20a%20fire,Pulaski%20to%20extinguish%20small%20fires.",
+        "Prevent or stop \ud83d\udd25?":"Wildfires are dealt with in two ways: Prevention, or limiting the ability of a devastating wildfire to start, and Suppression, or controlling the damage in case a fire does start. Since a fire needs oxygen, fuel, and a spark to start and grow, it follows that any plan would have to revolve around those three things. \r\nTo limit fuel, we use prescribed fires, which are small fires that get rid of highly flammable vegetation to keep fuel from building up. We also focus on climate change, which increases temperatures, drying out the air, land, and plants, and making it easier for a spark to take. Since the sparks that start the fires are mostly provided by humans, it\u2019s important to inform the public on fire safety and improve power line infrastructure.\r\nFor suppression, we target Oxygen and fuel supply. The most well-known method is dumping water on the fires, which deprives it of Oxygen. Firefighting foam is also used for this. However, the majority of techniques are used to deprive the fire of fuel. A boundary can be created by targeting unburned areas in the path of the fire with back-burning, vegetation removal, or dousing the land with fire retardant or water. All of these techniques either limit the ability of fuel to catch on fire or remove the fuel entirely.\r\nFor more information on prevention, go to: https:\/\/www.fire.ca.gov\/programs\/resource-management\/resource-protection-improvement\/vegetation-management-program\/\r\nFor more information on suppression, go to: https:\/\/www.enr.gov.nt.ca\/en\/services\/wildfire-operations\/suppressing-wildland-fires#:~:text=To%20put%20out%20a%20fire,Pulaski%20to%20extinguish%20small%20fires.",
         "List of fires":"Information on current major wildfires can be found on Cal Fire\u2019s website. Past incidents can be found by year under the \u201cIncidents\u201d tab at the top. https:\/\/www.fire.ca.gov\/incidents\/",
         "Emergency Protocols":"I think you want to learn something about what to do in an emergency. If you are in an emergency and need immediate assistance, please call 911. What would you like to know about?",
         "What if fire is near":"If you are not trapped, evacuate from the wildfire and away from where it is moving. If evacuating by car, take wide roads instead of narrow roads as they can easily be blocked. Keep the doors locked, headlights on, windows shut, and switch off ventilation.\n\nIf you are unable to evacuate, shelter in place. You can prepare your home for shelter in place by: Turning off any propane or gas.\u00a0Fill sinks and bathtubs with water. Wet your lawn and roof with water. Move flammable items away from doors and windows.\u00a0Close all doors to slow down the fire in case it makes it into your home.\n\nIf you want to know more, check out this link that I found: https:\/\/www.safehome.org\/resources\/wildfire-safety-guide\/",
@@ -83,7 +83,7 @@
             "What about wildlife",
             "How does \ud83d\udd25 spread?",
             "What is \"contained\"",
-            "Methods to prevent & put out",
+            "Prevent or stop \ud83d\udd25?",
             "List of fires",
             "No, something else"
         ],
@@ -96,7 +96,7 @@
         "Why so many fires?":[
             "How do fires start?",
             "Climate Change?",
-            "Methods to prevent & put out"
+            "Prevent or stop \ud83d\udd25?"
         ],
         "Climate Change?":[
             "How do fires start?",
@@ -110,7 +110,7 @@
         ],
         "What about wildlife":[
             "Climate Change?",
-            "Methods to prevent & put out",
+            "Prevent or stop \ud83d\udd25?",
             "Prepare for evac?"
         ],
         "How does \ud83d\udd25 spread?":[
@@ -121,9 +121,9 @@
         "What is \"contained\"":[
             "How does \ud83d\udd25 spread?",
             "Prepare for evac?",
-            "Methods to prevent & put out"
+            "Prevent or stop \ud83d\udd25?"
         ],
-        "Methods to prevent & put out":[
+        "Prevent or stop \ud83d\udd25?":[
             "How do fires start?",
             "How does \ud83d\udd25 spread?",
             "What is \"contained\""
@@ -131,7 +131,7 @@
         "List of fires":[
             "Prepare for evac?",
             "Why so many fires?",
-            "Methods to prevent & put out"
+            "Prevent or stop \ud83d\udd25?"
         ],
         "Emergency Protocols":[
             "What if fire is near",
@@ -176,7 +176,7 @@
         "Community Recovery":[
             "Returning after fire",
             "Recovery resources?",
-            "Methods to prevent & put out",
+            "Prevent or stop \ud83d\udd25?",
             "Getting Involved"
         ],
         "Returning after fire":[
@@ -233,7 +233,7 @@
         "What about wildlife":"Fire Ecology",
         "How does \ud83d\udd25 spread?":"Fire Ecology",
         "What is \"contained\"":"Fire Ecology",
-        "Methods to prevent & put out":"Fire Ecology",
+        "Prevent or stop \ud83d\udd25?":"Fire Ecology",
         "List of fires":"Fire Ecology",
         "Emergency Protocols":"Emergency Protocols",
         "What if fire is near":"Emergency Protocols",
