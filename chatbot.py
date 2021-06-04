@@ -99,7 +99,7 @@ def bot_endpoint():
                     "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
                 }
             }
-            response = send_to_messenger(ctx)
+            send_to_messenger(ctx)
             # ctx = {
             #     "recipient": {
             #         "id": user_id,
