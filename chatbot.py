@@ -54,7 +54,6 @@ def find_response(user_message):
 
 def send_to_messenger(ctx):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
-    #ctx = json.dumps(ctx)
     print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
     print(response.text)
@@ -76,6 +75,7 @@ def bot_endpoint():
     else:
         # Receive the message and update the status to be typing
         body = json.loads(request.body.read())
+        print("Body received:", body)
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
         ctx = {
