@@ -33,6 +33,7 @@ class TextVectorizer(TransformerMixin):
 def find_response(user_message):
     fb_nlp = user_message['nlp']['traits']
     nlp_proba = {}
+    print("Facebook's NLP:", fb_nlp)
     for trait in ("greetings", "bye", "thanks"):
         if trait in fb_nlp:
             if fb_nlp[f"wit${trait}"][0]["value"] == "true":
