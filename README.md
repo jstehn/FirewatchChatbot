@@ -7,11 +7,12 @@ Table of Contents
 
 # FirewatchChatbot
 
-A Facebook chatbot done as a DataGood project for CalSAFE. The goal is to create a chatbot that can identify the kind of question about wildfires that the user is asking and provide helpful responses.
+A Facebook chatbot done as a DataGood project for CalSAFE. The goal is to create a chatbot that can identify the kind of question about wildfires that the user is asking and provide helpful responses. This bot's emphasis is primarily California wildfires. 
 
 # Methodology
 
-A model was created using Natural Language Processing (NLP) to perform Intent Classification. This classification is used on incoming messages to the bot and helps guides the bot's responses. This was trained on a small database of questions collected from the Internet by the team. The bot provides a list of related questions and the user can read about the topic.
+A model was created using Natural Language Processing (NLP) to perform Intent Classification. This classification is used on incoming messages to the bot and helps guides the bot's responses. This was trained on a small database of questions collected from the Internet by the team. The bot provides a list of related questions and the user can read about the topic. The categories currently implemented are Fire Preparation, Fire Ecology, Emergency Protocols, Fire Recovery, and Getting Involved. As the bot receives more use, the model will be updated with new user questions. 
+
 
 ## Intent Classification Model
 
