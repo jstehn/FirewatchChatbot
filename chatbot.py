@@ -113,14 +113,16 @@ def bot_endpoint():
             #         "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
             #     }
             # }
-            ctx = {
-                      "recipient": {
-                        'id': user_id,
-                      },
-                      "message": {
-                         'text': "He is the best!",
-                      }
-            }
+            ctx =  {
+                "recipient": {
+                    "id": user_id,
+                    },
+                        "message": {
+                            "text": message_contents[0],
+                            "quick_replies":
+                                [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
+                            }
+                        }
 
             send_to_messenger(ctx)
             # ctx = {
