@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import spacy
 import pickle
+import os
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
@@ -102,4 +103,7 @@ def bot_endpoint():
 
 
 debug(True)
-run(reloader=True)
+PORT = os.getenv('PORT')
+if not PORT:
+    PORT = 5000
+run(reloader=True, port=PORT)
