@@ -120,7 +120,10 @@ def bot_endpoint():
                         "message": {
                             "text": message_contents[0],
                             "quick_replies":
-                                [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
+                                [
+                                    {"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"}
+                                    for item in message_contents[1]
+                                ]
                             }
                         }
 
