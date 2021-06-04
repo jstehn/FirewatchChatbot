@@ -11,7 +11,7 @@ A Facebook chatbot done as a DataGood project for CalSAFE. The goal is to create
 
 # Methodology
 
-A model was created using Natural Language Processing (NLP) to perform Intent Classification. This classification is used on incoming messages to the bot and helps guides the bot's responses. This was trained on a small database of questions collected from the Internet by the team. The bot provides a list of related questions and the user can read about the topic. The categories currently implemented are Fire Preparation, Fire Ecology, Emergency Protocols, Fire Recovery, and Getting Involved. As the bot receives more use, the model will be updated with new user questions. 
+A model was created using Natural Language Processing (NLP) to perform Intent Classification. This classification is used on incoming messages to the bot and helps guides the bot's responses. This was trained on a small database of questions collected from the Internet by the team. The bot provides a list of related questions and the user can read about the topic.
 
 
 ## Intent Classification Model
@@ -20,7 +20,7 @@ While many out-of-the-box chatbots exist, I wanted to build one myself using skl
 
 ## Data
 
-The data was collected and classified manually by the team from across the internet. The goal was to get a sample of how people ask questions related to wildfires when chatting on the web. It is not training data that teaches the bot how to formulate a natural human response. We just want to the bot to understand what the user is trying to ask and give a response from a pre-selected list of responses. Quora, reddit, Answers, Facebook, Twitter, and local fire department websites were just some of the places where these questions were collected. The sample had about 450 questions that were classified by the team manually. Our hope is to expand this dataset later as it interacts with users.
+The data was collected and classified manually by the team from across the internet. The goal was to get a sample of how people ask questions related to wildfires when chatting on the web. It is not training data that teaches the bot how to formulate a natural human response. We just want to the bot to understand what the user is trying to ask and give a response from a pre-selected list of responses. Quora, reddit, Answers, Facebook, Twitter, and local fire department websites were just some of the places where these questions were collected. The sample had about 450 questions that were classified by the team manually. The categories currently implemented are Fire Preparation, Fire Ecology, Emergency Protocols, Fire Recovery, and Getting Involved. Our hope is to expand this dataset later as it interacts with users.
 
 ## Platform
 
