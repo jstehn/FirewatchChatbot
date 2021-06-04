@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import spacy
 import pickle
+# May need to run beforehand: python -m spacy download en_core_web_md
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 NLP = spacy.load('en_core_web_md')
@@ -101,4 +102,4 @@ def bot_endpoint():
 
 
 debug(True)
-run(reloader=True, port=5000)
+run(reloader=True)
