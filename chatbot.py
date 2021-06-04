@@ -39,6 +39,10 @@ def find_response(user_message):
             if fb_nlp[f"wit${trait}"][0]["value"] == "true":
                 print(trait, fb_nlp[f"wit${trait}"][0]["confidence"])
                 nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
+            else:
+                nlp_proba[trait] = 0
+        else:
+            nlp_proba[trait] = 0
     probable_trait = max(nlp_proba, key=nlp_proba.get)
     if nlp_proba[probable_trait] >= 0.95:
         print(f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
@@ -47,7 +51,7 @@ def find_response(user_message):
         message_text = user_message["text"]
 
     if message_text in BOT_RESPONSES.index:
-        return [BOT_RESPONSES["Response"][message_text], BOT_RESPONSES["Links"][user_message]]
+        return [BOT_RESPONSES["Response"][message_text], BOT_RESPONSES["Links"][message_text]]
     else:
         with open(r'data/model.sav', 'rb') as file:
             MODEL = pickle.load(file)
