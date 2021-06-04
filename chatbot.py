@@ -51,7 +51,6 @@ def send_to_messenger(ctx):
 @route('/', method=["GET", "POST"])
 def bot_endpoint():
     if request.method.lower() == 'get':
-        return "Test Successful"
         verify_token = request.GET.get('hub.verify_token')
         hub_challenge = request.GET.get('hub.challenge')
         if verify_token == VERIFY_TOKEN:
