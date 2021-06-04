@@ -44,7 +44,7 @@ def find_response(user_message):
         probabilities = MODEL.predict_proba(["Hello world"])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
-        
+
         if max_proba < 0.6:
             message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
             links = MODEL.classes_
@@ -76,7 +76,7 @@ def bot_endpoint():
             url = "{0}/me/subscribed_apps?access_token={1}".format(
                 GRAPH_URL, PAGE_TOKEN)
             response = requests.post(url)
-            print ("Hub challenge:", hub_challenge)
+            print("Hub challenge:", hub_challenge)
             return hub_challenge
     else:
         # Receive the message and update the status to be typing
@@ -107,7 +107,8 @@ def bot_endpoint():
             # response = send_to_messenger(ctx)
             message_contents = find_response(message_text)
             ctx = {
-                'recipient': {"id": user_id, },
+                "messaging_type": "RESPONSE",
+                'recipient': {"id": user_id},
                 'message': {
                     "text": message_contents[0],
                     "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
