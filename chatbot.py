@@ -103,7 +103,4 @@ def bot_endpoint():
 
 
 debug(True)
-PORT = os.getenv('PORT')
-if not PORT:
-    PORT = 5000
-run(reloader=True, port=PORT)
+run(host='0.0.0.0', reloader=True, port=os.environ.get('PORT', '5000'))
