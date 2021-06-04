@@ -13,8 +13,8 @@ import os
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 NLP = spacy.load('data/en_core_web_md')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
-VERIFY_TOKEN = 'DR54375234'
-PAGE_TOKEN = 'EAAFKXWyhAmIBAA9wMX1QiX2HHePXugS9WTHOp64HEIcgUZB961tzt30kWOkqZB0akInLOIPLZAunbGJDSyjXMNACDbewSukRgEkp3Wcz0u4ncD4d1yXaCnZASjCltBynVqZBsd2ByH6DWmgfmLAxF04cU1nF6CCLDjk1Pt0i824gUyUuGCXWt'
+
+VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
 
 
 class TextVectorizer(TransformerMixin):
@@ -28,8 +28,10 @@ class TextVectorizer(TransformerMixin):
             # X
             new_X[idx, :] = doc.vector
         return new_X
+
     def fit(self, X, y=None, **fit_params):
         return self
+
 
 with open(r'data/model.sav', 'rb') as file:
     MODEL = pickle.load(file)
@@ -75,7 +77,7 @@ def bot_endpoint():
             # Webhook that it has received is not a message. Return to avoid a 500 error.
             return ''
         message_text = body['entry'][0]['messaging'][0]['message']['text']
-        if user_id != page_id:            
+        if user_id != page_id:
             ctx = {
                 "recipient": {
                     "id": user_id,
@@ -95,9 +97,9 @@ def bot_endpoint():
             ctx = {
                 "recipient": {
                     "id": user_id,
-                    },
-                    "sender_action": "typing_off"
-                }
+                },
+                "sender_action": "typing_off"
+            }
             response = send_to_messenger(ctx)
         return ''
 
