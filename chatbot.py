@@ -59,6 +59,7 @@ def find_response(user_message):
 
 def send_to_messenger(ctx):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
+    ctx = json.dump(ctx)
     print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
 
