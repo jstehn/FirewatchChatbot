@@ -62,6 +62,7 @@ def send_to_messenger(ctx):
     ctx = json.dumps(ctx)
     print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
+    print(response.text)
 
 
 @route('/', method=["GET", "POST"])
