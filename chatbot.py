@@ -83,7 +83,7 @@ def bot_endpoint():
         #     return ''
         message_text = body['entry'][0]['messaging'][0]['message']['text']
         if user_id != page_id:
-            print(message_text, user_id)
+            print("Message text:", message_text, "\nUser ID", user_id)
             # ctx = {
             #     "recipient": {
             #         "id": user_id,
