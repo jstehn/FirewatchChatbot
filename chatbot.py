@@ -11,7 +11,7 @@ import os
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
-NLP = spacy.load('en_core_web_md')
+NLP = spacy.load('data/en_core_web_md')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN = 'DR54375234'
 PAGE_TOKEN = 'EAAFKXWyhAmIBAA9wMX1QiX2HHePXugS9WTHOp64HEIcgUZB961tzt30kWOkqZB0akInLOIPLZAunbGJDSyjXMNACDbewSukRgEkp3Wcz0u4ncD4d1yXaCnZASjCltBynVqZBsd2ByH6DWmgfmLAxF04cU1nF6CCLDjk1Pt0i824gUyUuGCXWt'
