@@ -52,19 +52,23 @@ def send_to_messenger(ctx):
 
 @route('/', method=["GET", "POST"])
 def bot_endpoint():
+    print("Request received.")
     if request.method.lower() == 'get':
+        print("Request is a get request (used for verifying).")
         verify_token = request.GET.get('hub.verify_token')
         hub_challenge = request.GET.get('hub.challenge')
         if verify_token == VERIFY_TOKEN:
             url = "{0}/me/subscribed_apps?access_token={1}".format(
                 GRAPH_URL, PAGE_TOKEN)
             response = requests.post(url)
+            print ("Hub challenge:", hub_challenge)
             return hub_challenge
     else:
         # Receive the message and update the status to be typing
         body = json.loads(request.body.read())
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
+        print("Body received:", str(body))
         ctx = {
             "recipient": {
                 "id": user_id,
