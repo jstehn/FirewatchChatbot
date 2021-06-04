@@ -1,8 +1,11 @@
 {
     "Response":{
         "Who created you?":"I was created by a team of students at Datagood @ UC Berkeley! DataGood @ Berkeley focuses on creating an outlet for students to learn and utilize their data science skills in meaningful impact driven sectors. They empower our members to design, develop, and ship out large-scale products to promote positive socio-economic advancement.\n\nOur team members include: Jack Stehn, Kiernynn Grantham-Crum, Danny Ticknor, Selena Lu, Riti Pathak, Ethan Ikegami, Divya Kunisestty, and Eric Chen.",
-        "Help":"I\u2019m a chatbot \ud83e\udd16 here to answer your questions about wildfires in California! You can ask me questions from the categories of Wildfire Preparation, Emergency Fire Protocols, Fire Ecology, Fire Recovery, and Getting Involved.",
-        "No, something else":"I'm sorry! Which of these categories would you like to learn about? Wildfire Preparation, Emergency Fire Protocols, Fire Ecology, Fire Recovery, or Getting Involved.",
+        "Help":"You can ask me questions from the categories of Wildfire Preparation, Emergency Fire Protocols, Fire Ecology, Fire Recovery, and Getting Involved.\n\nTry asking me a question or clicking one of the categories below!",
+        "greetings":"Hello there! I\u2019m a chatbot \ud83e\udd16 here to answer your questions about wildfires in California!\n\nYou can ask me questions from the categories of Wildfire Preparation, Emergency Fire Protocols, Fire Ecology, Fire Recovery, and Getting Involved.\n\nTry asking me a question or clicking one of the categories below!",
+        "thanks":"You're welcome! Is there anything else I can help you with?",
+        "bye":"Goodbye! Let me know if you need anything else.",
+        "No, something else":"I'm sorry! Which of these categories would you like to learn about?",
         "Fire Preparation":"I think you want to learn something about fire preparation. When preparing for a wildfire, you should pay attention to your home and prepare for an evacuation. What would you like to know about?",
         "Prepare for evac?":"First, make sure you are following all evacuation orders for your own safety. If you are being told to leave, it\u2019s important to do so, regardless of what you have packed. However, if you have a bit of time before you have to evacuate, assemble an emergency supply kit for each person in your household. Make sure to gather important documents, prescriptions, eyeglasses, and important medical equipment.\n\nBe sure to take your pets with you and do not leave them in your home with no way to escape. If you\u2019re preparing before a wildfire occurs, you can gather additional emergency supplies such as N95 masks, plan a fire evacuation plan and meeting spot with the members of your household, and create a list of emergency contacts well outside of your area so you have a place to stay just in case.\n\nTo learn more about a wildfire evacuation plan, go to: https:\/\/www.readyforwildfire.org\/prepare-for-wildfire\/get-set\/wildfire-action-plan\/",
         "Fire Supply Kit?":"The basic necessities of a fire emergency kit include:\n\n\u2022 Water\n\u2022 Flashlight\n\u2022 Non-Perishable food\n\u2022 Phone and electronics chargers\n\u2022 Battery-powered radio\n\u2022 First aid kit\n\u2022 Extra batteries\n\u2022 Sanitation supplies\n\u2022 Copies of important documents\n\u2022 N95 respirators\n\u2022 Extra change of clothes for your climate and sturdy shoes\nIf applicable:\n\u2022 Menstrual products and personal hygiene items\n\u2022 Prescription medications, eyeglasses, and medical equipment\n\u2022 Infant formula, bottles, diapers, wipes, and diaper rash cream\n\u2022 Pet food\/ accessories and extra water for the pet \n\nTo learn more about what to pack in an emergency supply kit, go to: https:\/\/www.ready.gov\/kit",
@@ -39,6 +42,27 @@
             "Help"
         ],
         "Help":[
+            "Fire Preparation",
+            "Fire Ecology",
+            "Emergency Protocols",
+            "Fire Recovery",
+            "Getting Involved"
+        ],
+        "greetings":[
+            "Fire Preparation",
+            "Fire Ecology",
+            "Emergency Protocols",
+            "Fire Recovery",
+            "Getting Involved"
+        ],
+        "thanks":[
+            "Fire Preparation",
+            "Fire Ecology",
+            "Emergency Protocols",
+            "Fire Recovery",
+            "Getting Involved"
+        ],
+        "bye":[
             "Fire Preparation",
             "Fire Ecology",
             "Emergency Protocols",
@@ -219,6 +243,9 @@
     "Topic":{
         "Who created you?":"Other",
         "Help":"Other",
+        "greetings":"",
+        "thanks":"",
+        "bye":"",
         "No, something else":"Other",
         "Fire Preparation":"Fire Preparation",
         "Prepare for evac?":"Fire Preparation",

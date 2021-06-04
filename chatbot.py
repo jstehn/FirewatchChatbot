@@ -31,12 +31,25 @@ class TextVectorizer(TransformerMixin):
         return self
 
 def find_response(user_message):
-    if user_message in BOT_RESPONSES.index:
-        return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
+    fb_nlp = user_message['nlp']['traits']
+    nlp_proba = {}
+    for trait in ("greetings", "bye", "thanks"):
+        if trait in fb_nlp:
+            if fb_nlp[f"wit${trait}"][0]["value"] == "true":
+                nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
+    probable_trait = max(nlp_proba, key=nlp_proba.get)
+    if nlp_proba[probable_trait] >= 0.95:
+        print(f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
+        message_text = probable_trait
+    else:
+        message_text = user_message["text"]
+
+    if message_text in BOT_RESPONSES.index:
+        return [BOT_RESPONSES["Response"][message_text], BOT_RESPONSES["Links"][user_message]]
     else:
         with open(r'data/model.sav', 'rb') as file:
             MODEL = pickle.load(file)
-        probabilities = MODEL.predict_proba([user_message])[0]
+        probabilities = MODEL.predict_proba([message_text])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
         if max_proba < 0.6:
@@ -86,7 +99,7 @@ def bot_endpoint():
         if 'message' not in body['entry'][0]['messaging'][0]:
             # Webhook that it has received is not a message. Return to avoid a 500 error.
             return ''
-        message_text = body['entry'][0]['messaging'][0]['message']['text']
+        user_message = body['entry'][0]['messaging'][0]['message']['text']
         if user_id != page_id:
             ctx = {
                 "recipient": {
@@ -98,17 +111,7 @@ def bot_endpoint():
             message_contents = find_response(message_text)
             # Cases that we care about:
             # 1) It's a wit$greetings
-            # 2) It's wit$bye
-            fb_nlp = body['entry'][0]['messaging'][0]['message']['nlp']['traits']
-            if "wit$greetings" in fb_nlp:
-                if fb_nlp["wit$greetings"][0]["value"] == "true" and fb_nlp["wit$greetings"][0]["confidence"] >= 0.95:
-                    message_contents = ["Hello, there!",["Help"]]
-            if "wit$bye" in fb_nlp:
-                if fb_nlp["wit$bye"][0]["value"] == "true" and fb_nlp["wit$bye"][0]["confidence"] >= 0.95:
-                    message_contents = ["Goodbye!",["Help"]]
-            if "wit$thanks" in fb_nlp:
-                if fb_nlp["wit$thanks"][0]["value"] == "true" and fb_nlp["wit$thanks"][0]["confidence"] >= 0.95:
-                    message_contents = ["You're welcome!",["Help"]]   
+            # 2) It's wit$bye             
             ctx = {
                 "recipient": {
                     "id": user_id,
