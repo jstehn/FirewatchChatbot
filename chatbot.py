@@ -36,7 +36,9 @@ def find_response(user_message):
     for trait in ("greetings", "bye", "thanks"):
         if trait in fb_nlp:
             if fb_nlp[f"wit${trait}"][0]["value"] == "true":
+                print(trait, fb_nlp[f"wit${trait}"][0]["confidence"])
                 nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
+    print(nlp_proba)
     probable_trait = max(nlp_proba, key=nlp_proba.get)
     if nlp_proba[probable_trait] >= 0.95:
         print(f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
