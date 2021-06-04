@@ -9,7 +9,7 @@ import spacy
 import pickle
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
-NLP = spacy.load(r'data\en_core_web_md-3.0.0')
+NLP = spacy.load(r'data/en_core_web_md-3.0.0')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN = 'DR54375234'
 PAGE_TOKEN = 'EAAFKXWyhAmIBAA9wMX1QiX2HHePXugS9WTHOp64HEIcgUZB961tzt30kWOkqZB0akInLOIPLZAunbGJDSyjXMNACDbewSukRgEkp3Wcz0u4ncD4d1yXaCnZASjCltBynVqZBsd2ByH6DWmgfmLAxF04cU1nF6CCLDjk1Pt0i824gUyUuGCXWt'
