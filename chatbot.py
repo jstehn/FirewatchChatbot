@@ -11,14 +11,12 @@ import os
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
-NLP = spacy.load('data/en_core_web_md')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
-
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
-
 
 class TextVectorizer(TransformerMixin):
     def transform(self, X, **transform_params):
+        NLP = spacy.load('data/en_core_web_md')
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
         # Iterate over the sentences
         for idx, sentence in enumerate(X):
@@ -32,15 +30,12 @@ class TextVectorizer(TransformerMixin):
     def fit(self, X, y=None, **fit_params):
         return self
 
-
-with open(r'data/model.sav', 'rb') as file:
-    MODEL = pickle.load(file)
-
-
 def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
         return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
     else:
+        with open(r'data/model.sav', 'rb') as file:
+            MODEL = pickle.load(file)
         probabilities = MODEL.predict_proba([user_message])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
