@@ -68,27 +68,28 @@ def bot_endpoint():
         body = json.loads(request.body.read())
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
-        print("Body received:", str(body))
-        ctx = {
-            "recipient": {
-                "id": user_id,
-            },
-            "sender_action": "mark_seen"
-        }
-        response = send_to_messenger(ctx)
-        # Get contents of the recieved request
-        if 'message' not in body['entry'][0]['messaging'][0]:
-            # Webhook that it has received is not a message. Return to avoid a 500 error.
-            return ''
+        # print("Body received:", str(body))
+        # ctx = {
+        #     "recipient": {
+        #         "id": user_id,
+        #     },
+        #     "sender_action": "mark_seen"
+        # }
+        # response = send_to_messenger(ctx)
+        # # Get contents of the recieved request
+        # if 'message' not in body['entry'][0]['messaging'][0]:
+        #     # Webhook that it has received is not a message. Return to avoid a 500 error.
+        #     return ''
         message_text = body['entry'][0]['messaging'][0]['message']['text']
         if user_id != page_id:
-            ctx = {
-                "recipient": {
-                    "id": user_id,
-                },
-                "sender_action": "typing_on"
-            }
-            response = send_to_messenger(ctx)
+            print(message_text, user_id)
+            # ctx = {
+            #     "recipient": {
+            #         "id": user_id,
+            #     },
+            #     "sender_action": "typing_on"
+            # }
+            # response = send_to_messenger(ctx)
             message_contents = find_response(message_text)
             ctx = {
                 'recipient': {"id": user_id, },
@@ -98,13 +99,13 @@ def bot_endpoint():
                 }
             }
             response = send_to_messenger(ctx)
-            ctx = {
-                "recipient": {
-                    "id": user_id,
-                },
-                "sender_action": "typing_off"
-            }
-            response = send_to_messenger(ctx)
+            # ctx = {
+            #     "recipient": {
+            #         "id": user_id,
+            #     },
+            #     "sender_action": "typing_off"
+            # }
+            # response = send_to_messenger(ctx)
         return ''
 
 
