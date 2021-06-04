@@ -41,12 +41,20 @@ def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
         return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
     else:
-        category = MODEL.predict([user_message])[0]
+        probabilities = MODEL.predict_proba(["Hello world"])[0]
+        max_proba = max(probabilities)
+        category = MODEL.classes_[np.argmax(probabilities)]
+        
+        if max_proba < 0.7:
+            message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
+            links = MODEL.classes_
+        else:
+            message = BOT_RESPONSES["Response"][category]
+            links = BOT_RESPONSES["Links"][category]
         print("Message:", user_message)
         print("Predicted category:", category)
         print(BOT_RESPONSES["Response"][category])
-        return [BOT_RESPONSES["Response"][category], BOT_RESPONSES["Links"][category]]
-        return ["Sorry, I don't understand: " + user_message, ["Help"]]
+        return [message, links]
 
 
 def send_to_messenger(ctx):
