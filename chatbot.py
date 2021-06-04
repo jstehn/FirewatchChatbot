@@ -39,16 +39,13 @@ def find_response(user_message):
         probabilities = MODEL.predict_proba([user_message])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
-
         if max_proba < 0.6:
             message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
             links = MODEL.classes_
         else:
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
-        print("Message:", user_message)
-        print("Predicted category:", category)
-        print(BOT_RESPONSES["Response"][category])
+        print(f"Predicted Category: {category}, {max_proba}")
         return [message, links]
 
 
@@ -56,12 +53,12 @@ def send_to_messenger(ctx):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
     print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
-    print(response.text)
+    if response.status_code != 200:
+        print("Response Error:", response.text)
 
 
 @route('/', method=["GET", "POST"])
 def bot_endpoint():
-    print("Request received.")
     if request.method.lower() == 'get':
         print("Request is a get request (used for verifying).")
         verify_token = request.GET.get('hub.verify_token')
@@ -75,7 +72,7 @@ def bot_endpoint():
     else:
         # Receive the message and update the status to be typing
         body = json.loads(request.body.read())
-        print("Body received:", body)
+        print("Message received:", body)
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
         ctx = {
@@ -91,7 +88,6 @@ def bot_endpoint():
             return ''
         message_text = body['entry'][0]['messaging'][0]['message']['text']
         if user_id != page_id:
-            print("Message text:", message_text, "\nUser ID", user_id)
             ctx = {
                 "recipient": {
                     "id": user_id,
@@ -100,6 +96,19 @@ def bot_endpoint():
             }
             send_to_messenger(ctx)
             message_contents = find_response(message_text)
+            # Cases that we care about:
+            # 1) It's a wit$greetings
+            # 2) It's wit$bye
+            fb_nlp = body['entry'][0]['messaging'][0]['message']['nlp']['traits']
+            if "wit$greetings" in fb_nlp:
+                if fb_nlp["wit$greetings"]["value"] == "true" and fb_nlp["wit$greetings"]["confidence"] >= 0.95:
+                    message_contents = ["Hello, there!",["Help"]]
+            if "wit$bye" in fb_nlp:
+                if fb_nlp["wit$bye"]["value"] == "true" and fb_nlp["wit$bye"]["confidence"] >= 0.95:
+                    message_contents = ["Goodbye!",["Help"]]
+            if "wit$thanks" in fb_nlp:
+                if fb_nlp["wit$thanks"]["value"] == "true" and fb_nlp["wit$thanks"]["confidence"] >= 0.95:
+                    message_contents = ["You're welcome!",["Help"]]   
             ctx = {
                 "recipient": {
                     "id": user_id,
