@@ -45,7 +45,7 @@ def find_response(user_message):
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
         
-        if max_proba < 0.7:
+        if max_proba < 0.6:
             message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
             links = MODEL.classes_
         else:
