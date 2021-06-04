@@ -41,7 +41,7 @@ def find_response(user_message):
     if user_message in BOT_RESPONSES.index:
         return [BOT_RESPONSES["Response"][user_message], BOT_RESPONSES["Links"][user_message]]
     else:
-        probabilities = MODEL.predict_proba(["Hello world"])[0]
+        probabilities = MODEL.predict_proba([user_message])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
 
@@ -83,58 +83,50 @@ def bot_endpoint():
         body = json.loads(request.body.read())
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
-        # print("Body received:", str(body))
-        # ctx = {
-        #     "recipient": {
-        #         "id": user_id,
-        #     },
-        #     "sender_action": "mark_seen"
-        # }
-        # response = send_to_messenger(ctx)
-        # # Get contents of the recieved request
-        # if 'message' not in body['entry'][0]['messaging'][0]:
-        #     # Webhook that it has received is not a message. Return to avoid a 500 error.
-        #     return ''
+        ctx = {
+            "recipient": {
+                "id": user_id,
+            },
+            "sender_action": "mark_seen"
+        }
+        send_to_messenger(ctx)
+        # Get contents of the recieved request
+        if 'message' not in body['entry'][0]['messaging'][0]:
+            # Webhook that it has received is not a message. Return to avoid a 500 error.
+            return ''
         message_text = body['entry'][0]['messaging'][0]['message']['text']
         if user_id != page_id:
             print("Message text:", message_text, "\nUser ID", user_id)
-            # ctx = {
-            #     "recipient": {
-            #         "id": user_id,
-            #     },
-            #     "sender_action": "typing_on"
-            # }
-            # response = send_to_messenger(ctx)
-            message_contents = find_response(message_text)
-            # ctx = {
-            #     'recipient': {"id": user_id},
-            #     'message': {
-            #         "text": message_contents[0],
-            #         "quick_replies": [{"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"} for item in message_contents[1]]
-            #     }
-            # }
-            ctx =  {
+            ctx = {
                 "recipient": {
                     "id": user_id,
-                    },
-                        "message": {
-                            "text": message_contents[0],
-                            "quick_replies":
-                                [
-                                    {"content_type": "text", "title": item, "payload": "<POSTBACK_PAYLOAD>"}
-                                    for item in message_contents[1]
-                                ]
-                            }
-                        }
-
+                },
+                "sender_action": "typing_on"
+            }
             send_to_messenger(ctx)
-            # ctx = {
-            #     "recipient": {
-            #         "id": user_id,
-            #     },
-            #     "sender_action": "typing_off"
-            # }
-            # response = send_to_messenger(ctx)
+            message_contents = find_response(message_text)
+            ctx = {
+                "recipient": {
+                    "id": user_id,
+                },
+                "message": {
+                    "text": message_contents[0],
+                    "quick_replies":
+                    [
+                        {"content_type": "text", "title": item,
+                         "payload": "<POSTBACK_PAYLOAD>"}
+                        for item in message_contents[1]
+                    ]
+                }
+            }
+            send_to_messenger(ctx)
+            ctx = {
+                "recipient": {
+                    "id": user_id,
+                },
+                "sender_action": "typing_off"
+            }
+            send_to_messenger(ctx)
         return ''
 
 
