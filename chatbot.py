@@ -68,7 +68,7 @@ def find_response(user_message):
         else:
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
-        print(f"Predicted Category: {category}, {max_proba}")
+        print(f"Predicted Category: {category}, {max_proba}")    
     return {"message": message, "quick_responses": links}
 
 
@@ -119,6 +119,7 @@ def bot_endpoint():
             }
             send_to_messenger(ctx)
             message_contents = find_response(user_message)
+            print(message_contents)
             split_message = user_message["message"].split("\n\n")
             for i in range(len(split_message)):
                 ctx = {
