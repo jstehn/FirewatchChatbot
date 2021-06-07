@@ -54,7 +54,8 @@ def find_response(user_message):
         message_text = user_message["text"]
 
     if message_text in BOT_RESPONSES.index:
-        return [BOT_RESPONSES["Response"][message_text], BOT_RESPONSES["Links"][message_text]]
+        message = BOT_RESPONSES["Response"][message_text]
+        links = BOT_RESPONSES["Links"][message_text]
     else:
         with open(r'data/model.sav', 'rb') as file:
             MODEL = pickle.load(file)
@@ -68,7 +69,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
         print(f"Predicted Category: {category}, {max_proba}")
-        return {"message": message, "quick_responses": links}
+    return {"message": message, "quick_responses": links}
 
 
 def send_to_messenger(ctx):
