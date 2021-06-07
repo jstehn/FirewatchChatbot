@@ -68,7 +68,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
         print(f"Predicted Category: {category}, {max_proba}")
-        return {"messasge": message, "quick_responses": links}
+        return {"message": message, "quick_responses": links}
 
 
 def send_to_messenger(ctx):
