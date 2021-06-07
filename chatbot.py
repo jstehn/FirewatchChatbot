@@ -15,6 +15,7 @@ GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
 NLP = spacy.load('data/en_core_web_md')
 
+
 class TextVectorizer(TransformerMixin):
     def transform(self, X, **transform_params):
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
@@ -29,6 +30,7 @@ class TextVectorizer(TransformerMixin):
 
     def fit(self, X, y=None, **fit_params):
         return self
+
 
 def find_response(user_message):
     fb_nlp = user_message['nlp']['traits']
@@ -45,7 +47,8 @@ def find_response(user_message):
             nlp_proba[trait] = 0
     probable_trait = max(nlp_proba, key=nlp_proba.get)
     if nlp_proba[probable_trait] >= 0.95:
-        print(f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
+        print(
+            f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
         message_text = probable_trait
     else:
         message_text = user_message["text"]
@@ -65,7 +68,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
         print(f"Predicted Category: {category}, {max_proba}")
-        return [message, links]
+        return {"messasge": message, "quick_responses": links}
 
 
 def send_to_messenger(ctx):
@@ -115,24 +118,39 @@ def bot_endpoint():
             }
             send_to_messenger(ctx)
             message_contents = find_response(user_message)
-            # Cases that we care about:
-            # 1) It's a wit$greetings
-            # 2) It's wit$bye             
+            split_message = user_message.split("\n\n")
+            for i in range(len(split_message)):
+                ctx = {
+                    "recipient": {
+                        "id": user_id,
+                    },
+                    "message": {
+                        "text": split_message[i],
+                    }
+                }
+                if i == (len(split_message) - 1):
+                    ctx["message"]["quick_replies"] = [
+                        {"content_type": "text", "title": item,
+                         "payload": "<POSTBACK_PAYLOAD>"}
+                        for item in message_contents["quick_responses"]
+                    ]
+                send_to_messenger(ctx)
+
             ctx = {
                 "recipient": {
                     "id": user_id,
                 },
                 "message": {
-                    "text": message_contents[0],
+                    "text": message_contents["message"],
                     "quick_replies":
                     [
                         {"content_type": "text", "title": item,
                          "payload": "<POSTBACK_PAYLOAD>"}
-                        for item in message_contents[1]
+                        for item in message_contents["quick_responses"]
                     ]
                 }
             }
-            send_to_messenger(ctx)
+            
             ctx = {
                 "recipient": {
                     "id": user_id,
