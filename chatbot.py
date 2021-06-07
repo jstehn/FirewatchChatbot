@@ -119,8 +119,7 @@ def bot_endpoint():
             }
             send_to_messenger(ctx)
             message_contents = find_response(user_message)
-            print(message_contents)
-            split_message = user_message["message"].split("\n\n")
+            split_message = message_contents["message"].split("\n\n")
             for i in range(len(split_message)):
                 ctx = {
                     "recipient": {
