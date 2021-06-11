@@ -8,6 +8,7 @@ import numpy as np
 import spacy
 import pickle
 import os
+from collections import deque
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 class TextVectorizer(TransformerMixin):
@@ -25,43 +26,11 @@ class TextVectorizer(TransformerMixin):
     def fit(self, X, y=None, **fit_params):
         return self
 
-class FixedlenList(list):
-	'''
-    subclass from list, providing all features list has
-    the list size is fixed. overflow items will be discarded
-	
-	'''
-	def __init__(self,l=0):
-		super(FixedlenList,self).__init__()
-		self.__length__=l #fixed length
-		
-	def pop(self,index=-1):
-		super(FixedlenList, self).pop(index)
-	
-	def remove(self,item):
-		self.__delitem__(item)
-		
-	def __delitem__(self,item):
-		super(FixedlenList, self).__delitem__(item)
-		#self.__length__-=1	
-		
-	def append(self,item):
-		if len(self) >= self.__length__:
-			super(FixedlenList, self).pop(0)
-		super(FixedlenList, self).append(item)		
-	
-	def extend(self,aList):
-		super(FixedlenList, self).extend(aList)
-		self.__delslice__(0,len(self)-self.__length__)
-
-	def insert(self):
-		pass
-
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
 NLP = spacy.load('data/en_core_web_md')
-RECENT_MESSAGES = FixedlenList(10) # Keep the IDs of the last 10 messages to verify that we haven't responded already.
+RECENT_MESSAGES = deque(maxlen=255) # Keep the IDs of the last 10 messages to verify that we haven't responded already.
 
 
 def find_response(user_message):
