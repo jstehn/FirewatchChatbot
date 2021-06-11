@@ -113,10 +113,10 @@ def bot_endpoint():
             return ''
         user_message = body['entry'][0]['messaging'][0]['message']
         message_hash = hashlib.md5(user_message["text"].encode())
+        global LAST_MESSAGE_HASH
         if hashlib.md5(user_message["text"].encode()) == LAST_MESSAGE_HASH:
             return ''
-        else:
-            global LAST_MESSAGE_HASH
+        else:            
             LAST_MESSAGE_HASH = message_hash
         if user_id != page_id:
             ctx = {
