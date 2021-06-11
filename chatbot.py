@@ -144,7 +144,9 @@ def bot_endpoint():
         user_message = body['entry'][0]['messaging'][0]['message']
         message_id = user_message["mid"]
         # Don't respond to messages we've seen before
+        print(f"Message ID: {message_id}\n Previous IDs: {RECENT_MESSAGES}")
         if message_id in RECENT_MESSAGES:
+            print(f"Already responded, ignoring messaged.")
             return ''
         # Don't respond to our own messages
         if user_id != page_id:
