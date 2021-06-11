@@ -100,7 +100,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
             print(f"Predicted Category: {category}, {max_proba}")
-    print(f"Bot response: {message.replace('\n',' ')}")
+    print("Bot response: {}".format(message.replace('\n',' ')))
     return {"message": message, "quick_responses": links}
 
 
