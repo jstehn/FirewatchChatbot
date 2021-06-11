@@ -14,8 +14,7 @@ import en_core_web_md
 
 
 class TextVectorizer(TransformerMixin):
-    def transform(self, X, **transform_params):
-        NLP = en_core_web_md.load()
+    def transform(self, X, **transform_params):        
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
         # Iterate over the sentences
         for idx, sentence in enumerate(X):
@@ -24,7 +23,6 @@ class TextVectorizer(TransformerMixin):
             # Save the document's .vector attribute to the corresponding row in
             # X
             new_X[idx, :] = doc.vector
-        NLP = None
         return new_X
 
     def fit(self, X, y=None, **fit_params):
@@ -37,6 +35,7 @@ VERIFY_TOKEN, PAGE_TOKEN = os.environ["VERIFY_TOKEN"], os.environ["PAGE_TOKEN"]
 NLP = None
 # Keep the IDs of the last 10 messages to verify that we haven't responded already.
 RECENT_MESSAGES = deque(maxlen=255)
+NLP = en_core_web_md.load()
 
 
 def find_response(user_message):
