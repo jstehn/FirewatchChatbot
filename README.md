@@ -25,3 +25,5 @@ The data was collected and classified manually by the team from across the inter
 ## Platform
 
 The bot is to be hosted on Heroku using Flask. It connects using Facebook's API. It uses the incoming messages, runs intent classification, and gives users options based on what it perceived the user's intent to be.
+
+Partially inspired by: https://tutorials.botsfloor.com/using-ngrok-for-testing-your-messenger-bot-22a84f8185fb

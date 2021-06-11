@@ -1,4 +1,3 @@
-# source code from https://tutorials.botsfloor.com/using-ngrok-for-testing-your-messenger-bot-22a84f8185fb
 from sklearn.base import TransformerMixin
 import json
 import requests
@@ -25,6 +24,7 @@ class TextVectorizer(TransformerMixin):
             # Save the document's .vector attribute to the corresponding row in
             # X
             new_X[idx, :] = doc.vector
+        NLP = None
         return new_X
 
     def fit(self, X, y=None, **fit_params):
