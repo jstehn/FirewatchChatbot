@@ -96,17 +96,18 @@ def find_response(user_message):
         category = MODEL.classes_[np.argmax(probabilities)]
         if max_proba < 0.6:
             message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
+            print("Predicted Category: Unknown")
             links = MODEL.classes_
         else:
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
-        print(f"Predicted Category: {category}, {max_proba}")
+            print(f"Predicted Category: {category}, {max_proba}")
+    print(f"Bot response: {message}")
     return {"message": message, "quick_responses": links}
 
 
 def send_to_messenger(ctx):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
-    print("Sending CTX to url:", ctx)
     response = requests.post(url, json=ctx)
     if response.status_code != 200:
         print("Response Error:", response.text)
@@ -144,10 +145,11 @@ def bot_endpoint():
         user_message = body['entry'][0]['messaging'][0]['message']
         message_id = user_message["mid"]
         # Don't respond to messages we've seen before
-        print(f"Message ID: {message_id}\n Previous IDs: {RECENT_MESSAGES}")
+        print(f"Message ID: {message_id}\nPrevious IDs: {RECENT_MESSAGES}")
         if message_id in RECENT_MESSAGES:
             print(f"Already responded, ignoring messaged.")
             return ''
+        RECENT_MESSAGES.append(message_id)
         # Don't respond to our own messages
         if user_id != page_id:
             ctx = {
