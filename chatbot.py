@@ -29,7 +29,7 @@ class TextVectorizer(TransformerMixin):
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
-#NLP = spacy.load('data/en_core_web_md')
+NLP = None
 RECENT_MESSAGES = deque(maxlen=255) # Keep the IDs of the last 10 messages to verify that we haven't responded already.
 
 
@@ -56,6 +56,7 @@ def find_response(user_message):
         message = BOT_RESPONSES["Response"][message_text]
         links = BOT_RESPONSES["Links"][message_text]
     else:
+        global NLP
         NLP = spacy.load('en_core_web_md')
         with open(r'data/model.sav', 'rb') as file:
             MODEL = pickle.load(file)
@@ -70,6 +71,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
             print(f"Predicted Category: {category}, {max_proba}")
+        NLP = None
     print("Bot response: {}".format(message.replace('\n',' ')))
     return {"message": message, "quick_responses": links}
 
