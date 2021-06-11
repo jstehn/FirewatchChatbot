@@ -8,12 +8,14 @@ import numpy as np
 import spacy
 import pickle
 import os
+import hashlib
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 BOT_RESPONSES = pd.read_json(r'data/responses.json')
 GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
 NLP = spacy.load('data/en_core_web_md')
+LAST_MESSAGE_HASH = None
 
 
 class TextVectorizer(TransformerMixin):
@@ -46,7 +48,7 @@ def find_response(user_message):
         else:
             nlp_proba[trait] = 0
     probable_trait = max(nlp_proba, key=nlp_proba.get)
-    if nlp_proba[probable_trait] >= 0.95:
+    if nlp_proba[probable_trait] >= 0.90:
         print(
             f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
         message_text = probable_trait
@@ -68,7 +70,7 @@ def find_response(user_message):
         else:
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
-        print(f"Predicted Category: {category}, {max_proba}")    
+        print(f"Predicted Category: {category}, {max_proba}")
     return {"message": message, "quick_responses": links}
 
 
@@ -110,6 +112,12 @@ def bot_endpoint():
             # Webhook that it has received is not a message. Return to avoid a 500 error.
             return ''
         user_message = body['entry'][0]['messaging'][0]['message']
+        message_hash = hashlib.md5(user_message["text"].encode())
+        if hashlib.md5(user_message["text"].encode()) == LAST_MESSAGE_HASH:
+            return ''
+        else:
+            global LAST_MESSAGE_HASH
+            LAST_MESSAGE_HASH = message_hash
         if user_id != page_id:
             ctx = {
                 "recipient": {
@@ -151,7 +159,7 @@ def bot_endpoint():
                     ]
                 }
             }
-            
+
             ctx = {
                 "recipient": {
                     "id": user_id,
