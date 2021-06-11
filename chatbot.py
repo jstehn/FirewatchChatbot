@@ -67,11 +67,9 @@ RECENT_MESSAGES = FixedlenList(10) # Keep the IDs of the last 10 messages to ver
 def find_response(user_message):
     fb_nlp = user_message['nlp']['traits']
     nlp_proba = {}
-    print("Facebook's NLP:", fb_nlp)
     for trait in ("greetings", "bye", "thanks"):
         if f"wit${trait}" in fb_nlp:
             if fb_nlp[f"wit${trait}"][0]["value"] == "true":
-                print(trait, fb_nlp[f"wit${trait}"][0]["confidence"])
                 nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
             else:
                 nlp_proba[trait] = 0
@@ -102,7 +100,7 @@ def find_response(user_message):
             message = BOT_RESPONSES["Response"][category]
             links = BOT_RESPONSES["Links"][category]
             print(f"Predicted Category: {category}, {max_proba}")
-    print(f"Bot response: {message}")
+    print(f"Bot response: {message.replace('\n',' ')}")
     return {"message": message, "quick_responses": links}
 
 
@@ -128,7 +126,6 @@ def bot_endpoint():
     else:
         # Receive the message and update the status to be typing
         body = json.loads(request.body.read())
-        print("Message received:", body)
         user_id = body['entry'][0]['messaging'][0]['sender']['id']
         page_id = body['entry'][0]['id']
         ctx = {
@@ -144,10 +141,10 @@ def bot_endpoint():
             return ''
         user_message = body['entry'][0]['messaging'][0]['message']
         message_id = user_message["mid"]
+        print(f'Message ID "{message_id}" received.')
         # Don't respond to messages we've seen before
-        print(f"Message ID: {message_id}\nPrevious IDs: {RECENT_MESSAGES}")
         if message_id in RECENT_MESSAGES:
-            print(f"Already responded, ignoring messaged.")
+            print(f"Already responded; ignoring messaged.")
             return ''
         RECENT_MESSAGES.append(message_id)
         # Don't respond to our own messages
