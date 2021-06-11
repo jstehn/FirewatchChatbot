@@ -9,6 +9,9 @@ import spacy
 import pickle
 import os
 from collections import deque
+import warnings
+
+
 # May need to run beforehand: python -m spacy download en_core_web_md
 
 class TextVectorizer(TransformerMixin):
@@ -32,6 +35,8 @@ VERIFY_TOKEN, PAGE_TOKEN = os.environ['VERIFY_TOKEN'], os.environ['PAGE_TOKEN']
 NLP = None
 RECENT_MESSAGES = deque(maxlen=255) # Keep the IDs of the last 10 messages to verify that we haven't responded already.
 
+# Spacy gives a few useless warnings that flood logs
+warnings.simplefilter("ignore", ResourceWarning)
 
 def find_response(user_message):
     fb_nlp = user_message['nlp']['traits']
