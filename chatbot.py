@@ -37,7 +37,7 @@ class TextVectorizer(TransformerMixin):
 
 
 class FacebookMessenger:
-    '''
+    """
     A class to organize correspondence with a particular user.
 
     Attributes
@@ -50,25 +50,81 @@ class FacebookMessenger:
 
     Methods
     -------
-    
-    '''
+
+    """
+
     def __init__(self, userid):
         self.__userid = userid
         self.__url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
 
     def send_to_messenger(self, ctx):
-        ctx["recipient"] = {"id" : self.__userid}
+        """Sends the request to API at the recipient ID
+        
+        Args:
+            ctx (dict) : Dictionary following Facebooks API to send content over messenger
+
+        Returns:
+            response : Response variable of the request
+        """
+        ctx["recipient"] = {"id": self.__userid}
         response = requests.post(self.__url, json=ctx)
         if response.status_code != 200:
             print("Response Error:", response.text)
+        return response
 
-    def send_read(self):
+    def read(self):
+        """Marks the chat as read"""
         ctx = {
             "sender_action": "mark_seen",
         }
-        self.send_to_messenger(ctx)
+        return self.send_to_messenger(ctx)
 
+    def typing(self, on):
+        """Updates so that the chat appears to be typing or not typing
 
+        Args:
+            on (bool): Indicates if the bot is typing or not
+
+        Returns:
+            Response: Response object
+        """
+        if on:
+            ctx = {
+                "sender_action": "typing_on",
+            }
+        else:
+            ctx = {
+                "sender_action": "typing_off",
+            }
+        return self.send_to_messenger(ctx)
+
+    def message(self, contents):
+        '''
+        Sends message with quick replies
+
+        Paramters:
+            contents (dict) : First element is a string to be sent as a message. Second element is a list of strings for quick replies    
+        '''
+        split_message = contents["message"].split("\n\n")
+            for i in range(len(split_message)):
+                ctx = {
+                    "recipient": {
+                        "id": user_id,
+                    },
+                    "message": {
+                        "text": split_message[i],
+                    },
+                }
+                if i == (len(split_message) - 1):
+                    ctx["message"]["quick_replies"] = [
+                        {
+                            "content_type": "text",
+                            "title": item,
+                            "payload": "<POSTBACK_PAYLOAD>",
+                        }
+                        for item in message_contents["quick_responses"]
+                    ]
+                send_to_messenger(ctx)
 
 
 def find_response(user_message):
@@ -128,13 +184,9 @@ def bot_endpoint():
         body = json.loads(request.body.read())
         user_id = body["entry"][0]["messaging"][0]["sender"]["id"]
         page_id = body["entry"][0]["id"]
-        ctx = {
-            "recipient": {
-                "id": user_id,
-            },
-            "sender_action": "mark_seen",
-        }
-        send_to_messenger(ctx)
+        chat = FacebookMessenger(user_id)
+        chat.read()
+
         # Get contents of the recieved request
         if "message" not in body["entry"][0]["messaging"][0]:
             # Webhook that it has received is not a message. Return to avoid a 500 error.
@@ -149,13 +201,7 @@ def bot_endpoint():
         RECENT_MESSAGES.append(message_id)
         # Don't respond to our own messages
         if user_id != page_id:
-            ctx = {
-                "recipient": {
-                    "id": user_id,
-                },
-                "sender_action": "typing_on",
-            }
-            send_to_messenger(ctx)
+            chat.typing(True)
             message_contents = find_response(user_message)
             split_message = message_contents["message"].split("\n\n")
             for i in range(len(split_message)):
