@@ -17,7 +17,7 @@ GRAPH_URL = "https://graph.facebook.com/v10.0"
 VERIFY_TOKEN, PAGE_TOKEN = os.environ["VERIFY_TOKEN"], os.environ["PAGE_TOKEN"]
 NLP = en_core_web_md.load()
 # Keep the IDs of the last 10 messages to verify that we haven't responded already.
-RECENT_MESSAGES = deque(maxlen=255)
+recent_messages = deque(maxlen=255)
 
 
 class TextVectorizer(TransformerMixin):
@@ -36,7 +36,7 @@ class TextVectorizer(TransformerMixin):
         return self
 
 
-class FacebookMessenger:
+class FacebookChat:
     """
     A class to organize correspondence with a particular user.
 
@@ -106,25 +106,22 @@ class FacebookMessenger:
             contents (dict) : First element is a string to be sent as a message. Second element is a list of strings for quick replies    
         '''
         split_message = contents["message"].split("\n\n")
-            for i in range(len(split_message)):
-                ctx = {
-                    "recipient": {
-                        "id": user_id,
-                    },
-                    "message": {
-                        "text": split_message[i],
-                    },
-                }
-                if i == (len(split_message) - 1):
-                    ctx["message"]["quick_replies"] = [
-                        {
-                            "content_type": "text",
-                            "title": item,
-                            "payload": "<POSTBACK_PAYLOAD>",
-                        }
-                        for item in message_contents["quick_responses"]
-                    ]
-                send_to_messenger(ctx)
+        for i in range(len(split_message)):
+            ctx = {
+                "message": {
+                    "text": split_message[i],
+                },
+            }
+            if i == (len(split_message) - 1):
+                ctx["message"]["quick_replies"] = [
+                    {
+                        "content_type": "text",
+                        "title": item,
+                        "payload": "<POSTBACK_PAYLOAD>",
+                    }
+                    for item in contents["quick_responses"]
+                ]
+            self.send_to_messenger(ctx)
 
 
 def find_response(user_message):
@@ -184,52 +181,21 @@ def bot_endpoint():
         body = json.loads(request.body.read())
         user_id = body["entry"][0]["messaging"][0]["sender"]["id"]
         page_id = body["entry"][0]["id"]
-        chat = FacebookMessenger(user_id)
-        chat.read()
-
-        # Get contents of the recieved request
-        if "message" not in body["entry"][0]["messaging"][0]:
-            # Webhook that it has received is not a message. Return to avoid a 500 error.
-            return ""
         user_message = body["entry"][0]["messaging"][0]["message"]
         message_id = user_message["mid"]
         print(f'Message ID "{message_id}" received.')
         # Don't respond to messages we've seen before
-        if message_id in RECENT_MESSAGES:
+        if message_id in recent_messages:
             print(f"Already responded; ignoring messaged.")
             return ""
-        RECENT_MESSAGES.append(message_id)
-        # Don't respond to our own messages
+        recent_messages.append(message_id)
+        # Don't respond to our own messages        
         if user_id != page_id:
+            chat = FacebookChat(user_id)
+            chat.read()
             chat.typing(True)
             message_contents = find_response(user_message)
-            split_message = message_contents["message"].split("\n\n")
-            for i in range(len(split_message)):
-                ctx = {
-                    "recipient": {
-                        "id": user_id,
-                    },
-                    "message": {
-                        "text": split_message[i],
-                    },
-                }
-                if i == (len(split_message) - 1):
-                    ctx["message"]["quick_replies"] = [
-                        {
-                            "content_type": "text",
-                            "title": item,
-                            "payload": "<POSTBACK_PAYLOAD>",
-                        }
-                        for item in message_contents["quick_responses"]
-                    ]
-                send_to_messenger(ctx)
-            ctx = {
-                "recipient": {
-                    "id": user_id,
-                },
-                "sender_action": "typing_off",
-            }
-            send_to_messenger(ctx)
+            chat.message(message_contents)
         return ""
 
 
