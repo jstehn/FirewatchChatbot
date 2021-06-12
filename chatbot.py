@@ -220,7 +220,7 @@ def bot_endpoint():
         if message_content["user_id"] != message_content["page_id"]:
             chat = FacebookChat(message_content["user_id"])
             chat.read()
-            chat.typing(True)
+            chat.typing()
             content_to_send = find_response(message_content["message"])
             chat.message(content_to_send)
         return ""
