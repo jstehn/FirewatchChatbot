@@ -20,6 +20,7 @@ recent_messages = deque(maxlen=255)
 
 class TextVectorizer(TransformerMixin):
     """Text Vectorizer for intent classification model"""
+
     def transform(self, X, **transform_params):
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
         # Iterate over the sentences
@@ -49,6 +50,14 @@ class FacebookChat:
 
     Methods
     -------
+    read():
+        Sends the command to show that the bot has read the message
+
+    typing(on=True):
+        Sends the command to show that the bot is typing
+
+    message(contents):
+        Sends the message with all contents
 
     """
 
@@ -78,7 +87,7 @@ class FacebookChat:
         }
         return self.send_to_messenger(ctx)
 
-    def typing(self, on):
+    def typing(self, on=True):
         """Updates so that the chat appears to be typing or not typing
 
         Args:
@@ -178,8 +187,20 @@ def find_response(user_message):
     return {"message": message, "quick_responses": links}
 
 
+def parse_webhook(body):
+    """Takes the webhook and returns a dictionary with only the relevant info"""
+    message_content = {"user_id": body["entry"][0]["messaging"][0]["sender"]["id"],
+                       "page_id": body["entry"][0]["id"],
+                       "message_id": body["entry"][0]["messaging"][0]["message"]["mid"],
+                       "message": body["entry"][0]["messaging"][0]["message"]}
+    return message_content
+
+
 @route("/", method=["GET", "POST"])
 def bot_endpoint():
+    """Called when a GET or POST request is received.
+    GET indicates verifying of bot and POST indicates webhook"""
+
     if request.method.lower() == "get":
         print("Request is a get request (used for verifying).")
         verify_token = request.GET.get("hub.verify_token")
@@ -190,22 +211,18 @@ def bot_endpoint():
             print("Hub challenge:", hub_challenge)
             return hub_challenge
     else:
-        body = json.loads(request.body.read())
-        user_id = body["entry"][0]["messaging"][0]["sender"]["id"]
-        page_id = body["entry"][0]["id"]
-        user_message = body["entry"][0]["messaging"][0]["message"]
-        message_id = user_message["mid"]
-        print(f'Message ID "{message_id}" received.')
-        if message_id in recent_messages:
+        message_content = parse_webhook(json.loads(request.body.read()))
+        print(f'Message ID "{message_content["message_id"]}" received.')
+        if message_content["message_id"] in recent_messages:
             print(f"Already responded; ignoring messaged.")
             return ""
-        recent_messages.append(message_id)
-        if user_id != page_id:
-            chat = FacebookChat(user_id)
+        recent_messages.append(message_content["message_id"])
+        if message_content["user_id"] != message_content["page_id"]:
+            chat = FacebookChat(message_content["user_id"])
             chat.read()
             chat.typing(True)
-            message_contents = find_response(user_message)
-            chat.message(message_contents)
+            content_to_send = find_response(message_content["message"])
+            chat.message(content_to_send)
         return ""
 
 
