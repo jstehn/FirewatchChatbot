@@ -12,9 +12,16 @@ import en_core_web_md
 
 # May need to run beforehand: python -m spacy download en_core_web_md
 
+BOT_RESPONSES = pd.read_json(r"data/responses.json")
+GRAPH_URL = "https://graph.facebook.com/v10.0"
+VERIFY_TOKEN, PAGE_TOKEN = os.environ["VERIFY_TOKEN"], os.environ["PAGE_TOKEN"]
+NLP = en_core_web_md.load()
+# Keep the IDs of the last 10 messages to verify that we haven't responded already.
+RECENT_MESSAGES = deque(maxlen=255)
+
 
 class TextVectorizer(TransformerMixin):
-    def transform(self, X, **transform_params):        
+    def transform(self, X, **transform_params):
         new_X = np.zeros((len(X), NLP.vocab.vectors_length))
         # Iterate over the sentences
         for idx, sentence in enumerate(X):
@@ -29,13 +36,39 @@ class TextVectorizer(TransformerMixin):
         return self
 
 
-BOT_RESPONSES = pd.read_json(r"data/responses.json")
-GRAPH_URL = "https://graph.facebook.com/v10.0"
-VERIFY_TOKEN, PAGE_TOKEN = os.environ["VERIFY_TOKEN"], os.environ["PAGE_TOKEN"]
-NLP = None
-# Keep the IDs of the last 10 messages to verify that we haven't responded already.
-RECENT_MESSAGES = deque(maxlen=255)
-NLP = en_core_web_md.load()
+class FacebookMessenger:
+    '''
+    A class to organize correspondence with a particular user.
+
+    Attributes
+    ----------
+    userid : str
+        User ID that these messages will be sent to.
+
+    url : str
+        API url
+
+    Methods
+    -------
+    
+    '''
+    def __init__(self, userid):
+        self.__userid = userid
+        self.__url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
+
+    def send_to_messenger(self, ctx):
+        ctx["recipient"] = {"id" : self.__userid}
+        response = requests.post(self.__url, json=ctx)
+        if response.status_code != 200:
+            print("Response Error:", response.text)
+
+    def send_read(self):
+        ctx = {
+            "sender_action": "mark_seen",
+        }
+        self.send_to_messenger(ctx)
+
+
 
 
 def find_response(user_message):
@@ -75,13 +108,6 @@ def find_response(user_message):
             print(f"Predicted Category: {category}, {max_proba}")
     print("Bot response: {}".format(message.replace("\n", " ")))
     return {"message": message, "quick_responses": links}
-
-
-def send_to_messenger(ctx):
-    url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, PAGE_TOKEN)
-    response = requests.post(url, json=ctx)
-    if response.status_code != 200:
-        print("Response Error:", response.text)
 
 
 @route("/", method=["GET", "POST"])
