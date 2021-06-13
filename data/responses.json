@@ -5,7 +5,8 @@
         "greetings":"Hello there! I\u2019m a chatbot \ud83e\udd16 here to answer your questions about wildfires in California!\n\nYou can ask me questions from the categories of Wildfire Preparation, Emergency Fire Protocols, Fire Ecology, Fire Recovery, and Getting Involved.\n\nTry asking me a question or clicking one of the categories below!",
         "thanks":"You're welcome! Is there anything else I can help you with?",
         "bye":"Goodbye! Let me know if you need anything else.",
-        "No, something else":"I'm sorry! Which of these categories would you like to learn about?",
+        "unknown":"I'm sorry, I don't understand. What category is most relevant to your question?",
+        "No, something else":"I'm sorry! I don't quite understand your question. Which of these categories would you like to learn about?",
         "Fire Preparation":"I think you want to learn something about fire preparation. When preparing for a wildfire, you should pay attention to your home and prepare for an evacuation. What would you like to know about?",
         "Prepare for evac?":"First, make sure you are following all evacuation orders for your own safety. If you are being told to leave, it\u2019s important to do so, regardless of what you have packed. However, if you have a bit of time before you have to evacuate, assemble an emergency supply kit for each person in your household. Make sure to gather important documents, prescriptions, eyeglasses, and important medical equipment.\n\nBe sure to take your pets with you and do not leave them in your home with no way to escape. If you\u2019re preparing before a wildfire occurs, you can gather additional emergency supplies such as N95 masks, plan a fire evacuation plan and meeting spot with the members of your household, and create a list of emergency contacts well outside of your area so you have a place to stay just in case.\n\nTo learn more about a wildfire evacuation plan, go to: https:\/\/www.readyforwildfire.org\/prepare-for-wildfire\/get-set\/wildfire-action-plan\/",
         "Fire Supply Kit?":"The basic necessities of a fire emergency kit include:\n\n\u2022 Water\n\u2022 Flashlight\n\u2022 Non-Perishable food\n\u2022 Phone and electronics chargers\n\u2022 Battery-powered radio\n\u2022 First aid kit\n\u2022 Extra batteries\n\u2022 Sanitation supplies\n\u2022 Copies of important documents\n\u2022 N95 respirators\n\u2022 Extra change of clothes for your climate and sturdy shoes\nIf applicable:\n\u2022 Menstrual products and personal hygiene items\n\u2022 Prescription medications, eyeglasses, and medical equipment\n\u2022 Infant formula, bottles, diapers, wipes, and diaper rash cream\n\u2022 Pet food\/ accessories and extra water for the pet \n\nTo learn more about what to pack in an emergency supply kit, go to: https:\/\/www.ready.gov\/kit",
@@ -17,7 +18,7 @@
         "Climate Change?":"Climate change has increased the scale and intensity of fires. It has raised temperatures, leading to less moisture in the air and drier vegetation. Less moisture makes it easier for a fire to start, and drier vegetation provides a lot of fuel for when it does. In addition, it affects rainfall and snow pack, which has elongated the drying season. While California has always had fires, dry heats, and droughts, the rise in global temperatures has significantly worsened these conditions.\n\nThe resulting fires tend to burn hotter and wider, and are more difficult to put out. Over the past few decades, the average annual area burned has increased fivefold. For more information, go to: https:\/\/www.c2es.org\/content\/wildfires-and-climate-change\/ or https:\/\/www.nationalgeographic.com\/science\/article\/climate-change-increases-risk-fires-western-us",
         "When is fire season":"California fire season classically starts in May and hits peak severity in August, where it maintains that severity through the end of the season. In Northern California, the end is typically in October, and in Southern California, November or December. However, climate change is gradually making the season start earlier and end later.\n\nIt is largely believed there is no longer a fire season, because it takes up the whole year. Scientists have instead theorized there are two different fire seasons entirely, divided by the month and most common cause of the fires. The first one is from June through September, caused by drier and hotter weather, and mainly impacts inland, high-elevation forests. The second one is from October through April. It\u2019s caused by the Santa Ana winds, and is characterized by fast-spreading fires close to urban areas.\n\nFor more information, go to: https:\/\/www.frontlinewildfire.com\/when-california-fire-season\/ or https:\/\/www.seattletimes.com\/nation-world\/why-does-california-have-so-many-wildfires-4-key-reasons\/",
         "What about wildlife":"When a wildfire happens, initially the older and very young wildlife that cannot outrun it die in the flames. But most of the death occurs after the wildfire is over. The wildfire creates a new terrain that is open areas without shelter or food sources creating an opportunity for invasive species to take advantage of the opportunity which can be harmful for the habitat. Despite the casualties, wildfires are part of a healthy ecosystem and the natural cycle. Many trees depend on the fires for their life cycle.\n\nHowever, the recent high-intensity fires have proven too much for many of the trees to withstand, and what used to be a necessary part of a healthy ecosystem have instead started devastating it. As large swathes of forest burn, we can no longer count on the forest to regenerate. For more information on wildlife, go to: https:\/\/www.nationalforests.org\/blog\/what-happens-to-wildlife-during-a-wildfire For more information on trees, go to: https:\/\/insideclimatenews.org\/news\/21122016\/california-forests-wildfires-climate-change\/",
-        "How does \ud83d\udd25 spread?":"How fast a wildfire spreads depends on several environmental factors. Santa Ana winds and other high winds make it easier for the fire to spread. In addition if the fire is burning uphill or there is a lot of dead, dry vegetation, the fire will also spread faster. Wildfires can move as fast as 7 miles per hour in forests and up to 14 miles per hour in grasslands. While that might not seem fast, it\u2019s important to note that it\u2019s extremely difficult to outrun a fire. For more information, go to: https:\/\/www.forbes.com\/sites\/startswithabang\/2017\/09\/06\/the-terrifying-physics-of-how-wildfires-spread-so-fast\/?sh=1ce0199b7791 \r\nTo see an example of how fast a fire can spread, go to: https:\/\/www.youtube.com\/watch?v=hRDM3ir3l5M\r\nFor a timeline of fire spread, go to: https:\/\/www.disastercompany.com\/quickly-fire-spread\/",
+        "How does \ud83d\udd25 spread?":"If there are high winds (specifically Santa Ana winds), the fire is moving uphill, or there is a lot of dry vegetation, a fire will spread faster. Wildfires can move as fast as 7 mph in forests and up to 14 mph in grasslands.\n\nWhile that might not seem fast, it\u2019s too fast to out-run, and fire can quickly block roads, making it extremely hard to navigate and out-drive it. It\u2019s very important to evacuate when told to do so.\n\nFor more information, go to: \nhttps:\/\/www.forbes.com\/sites\/startswithabang\/2017\/09\/06\/the-terrifying-physics-of-how-wildfires-spread-so-fast\/?sh=1ce0199b7791\n\nTo see an example of how fast a fire can spread, go to: \nhttps:\/\/youtu.be\/hRDM3ir3l5M\n\nFor a timeline of fire spread, go to: \nhttps:\/\/www.disastercompany.com\/quickly-fire-spread\/",
         "What is \"contained\"":"Containment, normally expressed as a percentage, indicates how much of the fire has been enclosed by a control line. A wildfire with 25% containment means control lines have been completed around 25% of the fire\u2019s perimeter.\r\nControl lines are constructed or natural barriers used to stop a wildfire from spreading, also called firebreaks or fuel breaks. Firefighters sometimes create them with controlled burns to remove fuel before the wildfire reaches it.\r\nContained fires have been fully enclosed by control lines, which also are complete around any related spot fires. The fire may still be burning but is not likely to spread.\r\nControlled fires are not only contained, but have been burned out along the interior of the control line with any hot spots threatening the line cooled down. The control lines are expected to halt the spread of the fire under reasonable conditions.",
         "Prevent or stop \ud83d\udd25?":"Wildfires are dealt with in two ways: Prevention, or limiting the ability of a devastating wildfire to start, and Suppression, or controlling the damage in case a fire does start. Since a fire needs oxygen, fuel, and a spark to start and grow, it follows that any plan would have to revolve around those three things. \r\nTo limit fuel, we use prescribed fires, which are small fires that get rid of highly flammable vegetation to keep fuel from building up. We also focus on climate change, which increases temperatures, drying out the air, land, and plants, and making it easier for a spark to take. Since the sparks that start the fires are mostly provided by humans, it\u2019s important to inform the public on fire safety and improve power line infrastructure.\r\nFor suppression, we target Oxygen and fuel supply. The most well-known method is dumping water on the fires, which deprives it of Oxygen. Firefighting foam is also used for this. However, the majority of techniques are used to deprive the fire of fuel. A boundary can be created by targeting unburned areas in the path of the fire with back-burning, vegetation removal, or dousing the land with fire retardant or water. All of these techniques either limit the ability of fuel to catch on fire or remove the fuel entirely.\r\nFor more information on prevention, go to: https:\/\/www.fire.ca.gov\/programs\/resource-management\/resource-protection-improvement\/vegetation-management-program\/\r\nFor more information on suppression, go to: https:\/\/www.enr.gov.nt.ca\/en\/services\/wildfire-operations\/suppressing-wildland-fires#:~:text=To%20put%20out%20a%20fire,Pulaski%20to%20extinguish%20small%20fires.",
         "List of fires":"Information on current major wildfires can be found on Cal Fire\u2019s website. Past incidents can be found by year under the \u201cIncidents\u201d tab at the top. https:\/\/www.fire.ca.gov\/incidents\/",
@@ -69,6 +70,13 @@
             "Fire Recovery",
             "Getting Involved"
         ],
+        "unknown":[
+            "Fire Preparation",
+            "Fire Ecology",
+            "Emergency Protocols",
+            "Fire Recovery",
+            "Getting Involved"
+        ],
         "No, something else":[
             "Fire Preparation",
             "Fire Ecology",
@@ -80,7 +88,8 @@
             "How to prep home?",
             "What's my fire risk",
             "Fire Supply Kit?",
-            "Prepare for evac?"
+            "Prepare for evac?",
+            "No, something else"
         ],
         "Prepare for evac?":[
             "Fire Supply Kit?",
@@ -101,6 +110,7 @@
             "When is fire season"
         ],
         "Fire Ecology":[
+            "How do fires start?",
             "Why so many fires?",
             "Climate Change?",
             "When is fire season",
@@ -246,6 +256,7 @@
         "greetings":"",
         "thanks":"",
         "bye":"",
+        "unknown":"",
         "No, something else":"Other",
         "Fire Preparation":"Fire Preparation",
         "Prepare for evac?":"Fire Preparation",
