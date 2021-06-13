@@ -149,40 +149,55 @@ def find_response(user_message):
                 quick responses.
     """
 
-    fb_nlp = user_message["nlp"]["traits"]
-    nlp_proba = {}
-    for trait in ("greetings", "bye", "thanks"):
-        if f"wit${trait}" in fb_nlp:
-            if fb_nlp[f"wit${trait}"][0]["value"] == "true":
-                nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
+    def facebook_nlp_override(user_message):
+        '''Identifies if a message is is "greetings", "bye", or "thanks".
+        If it is, it changes the message so the appropriate response can
+        be given. Otherwise, it returns the normal message.'''
+        fb_nlp = user_message["nlp"]["traits"]
+        nlp_proba = {}
+        for trait in ("greetings", "bye", "thanks"):
+            if f"wit${trait}" in fb_nlp:
+                if fb_nlp[f"wit${trait}"][0]["value"] == "true":
+                    nlp_proba[trait] = fb_nlp[f"wit${trait}"][0]["confidence"]
+                else:
+                    nlp_proba[trait] = 0
             else:
                 nlp_proba[trait] = 0
+        probable_trait = max(nlp_proba, key=nlp_proba.get)
+        if nlp_proba[probable_trait] >= 0.90:
+            print(
+                f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
+            message_text = probable_trait
         else:
-            nlp_proba[trait] = 0
-    probable_trait = max(nlp_proba, key=nlp_proba.get)
-    if nlp_proba[probable_trait] >= 0.90:
-        print(f"Facebook classification: {probable_trait}, {nlp_proba[probable_trait]}")
-        message_text = probable_trait
-    else:
-        message_text = user_message["text"]
+            message_text = user_message["text"]
+        return message_text
 
-    if message_text in BOT_RESPONSES.index:
-        message = BOT_RESPONSES["Response"][message_text]
-        links = BOT_RESPONSES["Links"][message_text]
-    else:
+    def intent_classification_response(message_text):
+        """Classifies intent of the user
+
+        Args:
+            message_text (str): Message to be classified
+
+        Returns:
+            str: Messaage associated with 
+        """
+        CLASS_THRESH = 0.6
         with open("data/model.sav", "rb") as file:
             MODEL = pickle.load(file)
         probabilities = MODEL.predict_proba([message_text])[0]
         max_proba = max(probabilities)
         category = MODEL.classes_[np.argmax(probabilities)]
-        if max_proba < 0.6:
-            message = "I'm sorry, I don't understand. Let's try something else. What category is your question?"
-            print("Predicted Category: Unknown")
-            links = MODEL.classes_
-        else:
-            message = BOT_RESPONSES["Response"][category]
-            links = BOT_RESPONSES["Links"][category]
-            print(f"Predicted Category: {category}, {max_proba}")
+        if max_proba < CLASS_THRESH:
+            category = "unknown"
+            max_proba = f"< {CLASS_THRESH:.2f}"
+        print(f"Predicted Category: {category}, {max_proba}")
+        return category
+
+    message_text = facebook_nlp_override(user_message)
+    if message_text not in BOT_RESPONSES.index:
+        message_text = intent_classification_response(message_text)
+    message = BOT_RESPONSES["Response"][message_text]
+    links = BOT_RESPONSES["Links"][message_text]
     print("Bot response: {}".format(message.replace("\n", " ")))
     return {"message": message, "quick_responses": links}
 
