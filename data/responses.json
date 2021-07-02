@@ -6,37 +6,36 @@
         "thanks":"You're welcome! Is there anything else I can help you with?",
         "bye":"Goodbye! Let me know if you need anything else.",
         "unknown":"I'm sorry, I don't understand. What category is most relevant to your question?",
-        "No, something else":"I'm sorry! I don't quite understand your question. Which of these categories would you like to learn about?",
+        "No, something else":"I'm sorry! Which of these categories would you like to learn about?",
         "Fire Preparation":"I think you want to learn something about fire preparation. When preparing for a wildfire, you should pay attention to your home and prepare for an evacuation. What would you like to know about?",
-        "Prepare for evac?":"First, make sure you are following all evacuation orders for your own safety. If you are being told to leave, it\u2019s important to do so, regardless of what you have packed. However, if you have a bit of time before you have to evacuate, assemble an emergency supply kit for each person in your household. Make sure to gather important documents, prescriptions, eyeglasses, and important medical equipment.\n\nBe sure to take your pets with you and do not leave them in your home with no way to escape. If you\u2019re preparing before a wildfire occurs, you can gather additional emergency supplies such as N95 masks, plan a fire evacuation plan and meeting spot with the members of your household, and create a list of emergency contacts well outside of your area so you have a place to stay just in case.\n\nTo learn more about a wildfire evacuation plan, go to: https:\/\/www.readyforwildfire.org\/prepare-for-wildfire\/get-set\/wildfire-action-plan\/",
-        "Fire Supply Kit?":"The basic necessities of a fire emergency kit include:\n\n\u2022 Water\n\u2022 Flashlight\n\u2022 Non-Perishable food\n\u2022 Phone and electronics chargers\n\u2022 Battery-powered radio\n\u2022 First aid kit\n\u2022 Extra batteries\n\u2022 Sanitation supplies\n\u2022 Copies of important documents\n\u2022 N95 respirators\n\u2022 Extra change of clothes for your climate and sturdy shoes\nIf applicable:\n\u2022 Menstrual products and personal hygiene items\n\u2022 Prescription medications, eyeglasses, and medical equipment\n\u2022 Infant formula, bottles, diapers, wipes, and diaper rash cream\n\u2022 Pet food\/ accessories and extra water for the pet \n\nTo learn more about what to pack in an emergency supply kit, go to: https:\/\/www.ready.gov\/kit",
-        "How to prep home?":"In order for a fire to start, it needs fuel and a source. Remember to remove flammable materials, such as dry brush and dead leaves, from around your home.\n\nIt\u2019s also important to be attentive to anything that could start a flame, such as cigarette butts and burnt coals.\n\nEven if you don\u2019t see a flame, it can still start a fire! For specific actions you can take to protect yourself and your neighbors, go to: https:\/\/smokeybear.com\/en\/prevention-how-tos\/equipment-use-and-maintenance\/how-to-prepare-your-home-for-wildfire",
-        "What's my fire risk":"To check if you live in a generally high-risk fire zone, use the map found here: https:\/\/kqednews.carto.com\/builder\/4732dc15-cfc0-4dbb-865e-371b693239d5\/embed\n\nThe risk of wildfire can also change daily based on the weather. High-risk areas will likely have a daily fire danger rating.\n\nTo find updates on your current local fire danger rating, go to :https:\/\/www.fire.ca.gov\/programs\/communications\/red-flag-warnings-fire-weather-watches\/ ",
+        "Evacuations":"First, make sure to follow all evacuation orders for your own safety. If you are being told to leave, it\u2019s important to do so, regardless of what you have packed. However, if you have time before your evacuation, assemble an emergency supply kit for each person in your household. Make sure to gather important documents, prescriptions, eyeglasses, and important medical equipment. Be sure to take your pets with you and do not leave them in your home with no way to escape.\r\n\r\nIf you\u2019re preparing before a wildfire occurs, you can gather additional emergency supplies and create a wildfire action plan. Designate a meeting area for your family, and create a list of emergency contacts well outside of your area so you have a place to stay. \r\n\r\nTo learn more about a wildfire evacuation plan, go to: https:\/\/www.readyforwildfire.org\/prepare-for-wildfire\/get-set\/wildfire-action-plan\/",
+        "Emergency Supply Kit":"The basic necessities of a fire emergency kit include:\r\n\u2022 Water\r\n\u2022 Flashlight\r\n\u2022 Non-Perishable food\r\n\u2022 Phone and electronics chargers\r\n\u2022 Battery-powered radio\r\n\u2022 First aid kit\r\n\u2022 Extra batteries\r\n\u2022 Sanitation supplies\r\n\u2022 Copies of important documents\r\n\u2022 N95 respirators\r\n\u2022 Extra change of clothes for your climate and sturdy shoes\r\n\r\n\r\nIf applicable:\r\n\u2022 Menstrual products and personal hygiene items\r\n\u2022 Prescription medications, eyeglasses, and medical equipment\r\n\u2022 Infant formula, bottles, diapers, wipes, and diaper rash cream\r\n\u2022 Pet food\/ accessories and extra water for the pet\r\n\r\n\r\nTo learn more about what to pack in an emergency supply kit, go to: https:\/\/www.ready.gov\/kit",
+        "Prepare Your Home":"In order for a fire to start, it needs fuel and a source. Remember to remove flammable materials, such as dry brush and dead leaves, from around your home.\r\n\r\nIt\u2019s also important to be attentive to anything that could start a flame, such as cigarette butts and burning coals.\r\n\r\nEven if you don\u2019t see a flame, it can still start a fire! For specific actions you can take to protect yourself and your neighbors, go to: \r\nhttps:\/\/smokeybear.com\/en\/prevention-how-tos\/equipment-use-and-maintenance\/how-to-prepare-your-home-for-wildfire\r\n",
+        "My Fire Risk":"To check if you live in a generally high-risk fire zone, use the map found here: \r\nhttps:\/\/kqednews.carto.com\/builder\/4732dc15-cfc0-4dbb-865e-371b693239d5\/embed\r\n\r\nThe risk of wildfire can also change daily based on the weather. High-risk areas will likely have a daily fire danger rating. To find updates on your current local fire danger rating, go to: https:\/\/www.fire.ca.gov\/programs\/communications\/red-flag-warnings-fire-weather-watches\/ ",
         "Fire Ecology":"I think you want to learn something about fire ecology. Fire ecology is the scientific study of the causes and characteristics of fires. What would you like to know about?",
-        "How do fires start?":"Fire only needs three things to start: fuel, oxygen, and a spark. Roughly 87-95% percent of the time, wildland fires are caused by humans.\n\nDowned power lines are the most common cause, but others include leaving campfires unattended, burning debris, setting off fireworks, improper cigarette disposal, and acts of arson. The rest of the time, fire is caused by nature through lightning, lava, or (very rarely) through spontaneous combustion of dry fuel.\n\nDry grass covers much of California, which provides ample fuel for a blaze. Certain weather conditions such as dry heats, droughts, and high winds can feed a spark, turning it from a small flame into a big fire.\n\nFor a more detailed explanation, go to: https:\/\/www.nationalgeographic.com\/environment\/article\/wildfires or https:\/\/www.anthropocenemagazine.org\/2020\/09\/humans-cause-most-wildfires-that-threaten-homes-in-the-united-states\/",
-        "Why so many fires?":"Fires are a natural part of California\u2019s ecosystem and many species depend on the fires for survival. However, they\u2019ve been increasing in number. There are 4 main reasons for the frequent fires, which are interconnected and often feed into one another:\n\ni. Climate change exacerbates conditions already prone to fires. There is a lack of rainfall during the summer season, and the increasing temperatures dry out vegetation, making it easier to catch fire.\nii. People are the most common cause of wildfires in California, with many being started by downed power lines.\niii. Wildfire suppression, or the intentional extinguishing of beneficial wildfires, has also led to unnatural build-ups of dry vegetation that would otherwise be burned in small, manageable fires. California has addressed the situation by using controlled burns, as well as using hand tools and bulldozers to remove flammable vegetation.\niv. The Santa Ana winds are annual dry winds that blow across the state, drying out the environment and carrying sparks, causing fires to spread faster.\n\nFor more information on the 4 main causes, go to: https:\/\/www.seattletimes.com\/nation-world\/why-does-california-have-so-many-wildfires-4-key-reasons\/\nFor more general information, particularly on the environmental causes, go to: https:\/\/www.greenmatters.com\/p\/why-does-california-have-so-many-wildfires\/",
-        "Climate Change?":"Climate change has increased the scale and intensity of fires. It has raised temperatures, leading to less moisture in the air and drier vegetation. Less moisture makes it easier for a fire to start, and drier vegetation provides a lot of fuel for when it does. In addition, it affects rainfall and snow pack, which has elongated the drying season. While California has always had fires, dry heats, and droughts, the rise in global temperatures has significantly worsened these conditions.\n\nThe resulting fires tend to burn hotter and wider, and are more difficult to put out. Over the past few decades, the average annual area burned has increased fivefold. For more information, go to: https:\/\/www.c2es.org\/content\/wildfires-and-climate-change\/ or https:\/\/www.nationalgeographic.com\/science\/article\/climate-change-increases-risk-fires-western-us",
-        "When is fire season":"California fire season classically starts in May and hits peak severity in August, where it maintains that severity through the end of the season. In Northern California, the end is typically in October, and in Southern California, November or December. However, climate change is gradually making the season start earlier and end later.\n\nIt is largely believed there is no longer a fire season, because it takes up the whole year. Scientists have instead theorized there are two different fire seasons entirely, divided by the month and most common cause of the fires. The first one is from June through September, caused by drier and hotter weather, and mainly impacts inland, high-elevation forests. The second one is from October through April. It\u2019s caused by the Santa Ana winds, and is characterized by fast-spreading fires close to urban areas.\n\nFor more information, go to: https:\/\/www.frontlinewildfire.com\/when-california-fire-season\/ or https:\/\/www.seattletimes.com\/nation-world\/why-does-california-have-so-many-wildfires-4-key-reasons\/",
-        "What about wildlife":"When a wildfire happens, initially the older and very young wildlife that cannot outrun it die in the flames. But most of the death occurs after the wildfire is over. The wildfire creates a new terrain that is open areas without shelter or food sources creating an opportunity for invasive species to take advantage of the opportunity which can be harmful for the habitat. Despite the casualties, wildfires are part of a healthy ecosystem and the natural cycle. Many trees depend on the fires for their life cycle.\n\nHowever, the recent high-intensity fires have proven too much for many of the trees to withstand, and what used to be a necessary part of a healthy ecosystem have instead started devastating it. As large swathes of forest burn, we can no longer count on the forest to regenerate. For more information on wildlife, go to: https:\/\/www.nationalforests.org\/blog\/what-happens-to-wildlife-during-a-wildfire For more information on trees, go to: https:\/\/insideclimatenews.org\/news\/21122016\/california-forests-wildfires-climate-change\/",
-        "How does \ud83d\udd25 spread?":"If there are high winds (specifically Santa Ana winds), the fire is moving uphill, or there is a lot of dry vegetation, a fire will spread faster. Wildfires can move as fast as 7 mph in forests and up to 14 mph in grasslands.\n\nWhile that might not seem fast, it\u2019s too fast to out-run, and fire can quickly block roads, making it extremely hard to navigate and out-drive it. It\u2019s very important to evacuate when told to do so.\n\nFor more information, go to: \nhttps:\/\/www.forbes.com\/sites\/startswithabang\/2017\/09\/06\/the-terrifying-physics-of-how-wildfires-spread-so-fast\/?sh=1ce0199b7791\n\nTo see an example of how fast a fire can spread, go to: \nhttps:\/\/youtu.be\/hRDM3ir3l5M\n\nFor a timeline of fire spread, go to: \nhttps:\/\/www.disastercompany.com\/quickly-fire-spread\/",
-        "What is \"contained\"":"Containment, normally expressed as a percentage, indicates how much of the fire has been enclosed by a control line. A wildfire with 25% containment means control lines have been completed around 25% of the fire\u2019s perimeter.\r\nControl lines are constructed or natural barriers used to stop a wildfire from spreading, also called firebreaks or fuel breaks. Firefighters sometimes create them with controlled burns to remove fuel before the wildfire reaches it.\r\nContained fires have been fully enclosed by control lines, which also are complete around any related spot fires. The fire may still be burning but is not likely to spread.\r\nControlled fires are not only contained, but have been burned out along the interior of the control line with any hot spots threatening the line cooled down. The control lines are expected to halt the spread of the fire under reasonable conditions.",
-        "Prevent or stop \ud83d\udd25?":"Wildfires are dealt with in two ways: Prevention, or limiting the ability of a devastating wildfire to start, and Suppression, or controlling the damage in case a fire does start. Since a fire needs oxygen, fuel, and a spark to start and grow, it follows that any plan would have to revolve around those three things. \r\nTo limit fuel, we use prescribed fires, which are small fires that get rid of highly flammable vegetation to keep fuel from building up. We also focus on climate change, which increases temperatures, drying out the air, land, and plants, and making it easier for a spark to take. Since the sparks that start the fires are mostly provided by humans, it\u2019s important to inform the public on fire safety and improve power line infrastructure.\r\nFor suppression, we target Oxygen and fuel supply. The most well-known method is dumping water on the fires, which deprives it of Oxygen. Firefighting foam is also used for this. However, the majority of techniques are used to deprive the fire of fuel. A boundary can be created by targeting unburned areas in the path of the fire with back-burning, vegetation removal, or dousing the land with fire retardant or water. All of these techniques either limit the ability of fuel to catch on fire or remove the fuel entirely.\r\nFor more information on prevention, go to: https:\/\/www.fire.ca.gov\/programs\/resource-management\/resource-protection-improvement\/vegetation-management-program\/\r\nFor more information on suppression, go to: https:\/\/www.enr.gov.nt.ca\/en\/services\/wildfire-operations\/suppressing-wildland-fires#:~:text=To%20put%20out%20a%20fire,Pulaski%20to%20extinguish%20small%20fires.",
-        "List of fires":"Information on current major wildfires can be found on Cal Fire\u2019s website. Past incidents can be found by year under the \u201cIncidents\u201d tab at the top. https:\/\/www.fire.ca.gov\/incidents\/",
+        "How \ud83d\udd25 Starts":"Fire only needs three things to start: fuel, oxygen, and a spark. Roughly 87-95% percent of the time, wildland fires are caused by humans.\r\n\r\nDowned power lines are the most common cause, but others include leaving campfires unattended, burning debris, setting off fireworks, improper cigarette disposal, and acts of arson. The rest of the time, fire is caused by nature through lightning, lava, or (very rarely) through spontaneous combustion of dry fuel.\r\n\r\nDry grass covers much of California, which provides ample fuel for a blaze. Certain weather conditions such as dry heats, droughts, and high winds can feed a spark, turning it from a small flame into a big fire. For a more detailed explanation, go to: https:\/\/www.nationalgeographic.com\/environment\/article\/wildfires or https:\/\/www.anthropocenemagazine.org\/2020\/09\/humans-cause-most-wildfires-that-threaten-homes-in-the-united-states\/\r\n",
+        "Fire Frequency":"Fires are a natural part of California\u2019s ecosystem and many species depend on them. However, they\u2019ve been increasing in number. There are 4 main reasons for the frequent fires, which are interconnected and often feed into one another: \n\n\n1) Climate change exacerbates conditions already prone to fires. There is a lack of rainfall during the summer season, and the increasing temperatures dry out vegetation, making it easier to catch fire.\n\n\n2) People are the most common cause of wildfires in California, with many being started by downed power lines.\n\n\n3) Wildfire suppression, or the intentional extinguishing of beneficial wildfires, has led to unnatural build-ups of dry vegetation that would otherwise be burned in small, manageable fires. California is trying to combat this with controlled burns.\n\n\n4) The Santa Ana winds are annual dry winds that blow across the state, drying out the environment and carrying sparks, causing fires to spread faster.\n\nFor more information on the 4 main causes, go to: \nhttps:\/\/www.seattletimes.com\/nation-world\/why-does-california-have-so-many-wildfires-4-key-reasons\/\nFor more general information, particularly on the environmental causes, go to:\nhttps:\/\/www.greenmatters.com\/p\/why-does-california-have-so-many-wildfires\/\n",
+        "Climate Change":"Climate change has increased the number and intensity of fires. Higher temperatures take water out of the air, making it easier for fires to start, and dry out vegetation, providing a lot of fuel if one does. In addition, it affects rainfall and snow pack, elongating the drying season. \r\n\r\nWhile California has always had fires, dry heats, and droughts, the rise in global temperatures has made it a lot worse. Recent fires are hotter, cover more area, and are harder to put out. The average annual area burned now is 5 times more than it was a few decades ago. \r\n\r\nFor more information, go to: \r\nhttps:\/\/www.c2es.org\/content\/wildfires-and-climate-change\/\r\nhttps:\/\/www.nationalgeographic.com\/science\/article\/climate-change-increases-risk-fires-western-us",
+        "Fire Season":"California fire season classically starts in May and hits peak risk in August, through the end of the season. In Northern California, the end is typically in October, and in Southern California, November or December. However, climate change is making the season start earlier and end later.\r\n\r\nIt is largely believed there is no longer a fire season, since fire risk is high year-round. Scientists theorize there are two different fire seasons entirely, separated by month and cause. The first, from June through September, is caused by drier and hotter weather, and mainly impacts forests. The second, from October through April, is caused by the Santa Ana winds, and has fast fires near urban areas.\r\n\r\nFor more information, go to: \r\nhttps:\/\/www.frontlinewildfire.com\/when-california-fire-season\/\r\nhttps:\/\/www.seattletimes.com\/nation-world\/why-does-california-have-so-many-wildfires-4-key-reasons\/",
+        "Wildlife":"When a wildfire happens, initially only the old or young, and sick or injured cannot outrun it and perish, but most deaths occur after the fire. New, open terrain, without food or shelter, gives invasive species the chance to take over. \r\n\r\nDespite the casualties, wildfires are natural and many trees depend on them. However, they can\u2019t withstand the recent, high-intensity fires, and what used to be part of a healthy ecosystem has instead started devastating it. As large areas of forest burn, it struggles to regenerate.\r\n\r\nFor more information on wildlife, go to:\r\nhttps:\/\/www.nationalforests.org\/blog\/what-happens-to-wildlife-during-a-wildfire For more information on trees, go to:\r\nhttps:\/\/insideclimatenews.org\/news\/21122016\/california-forests-wildfires-climate-change\/\r\n",
+        "How \ud83d\udd25 Spreads":"If there are high winds (specifically Santa Ana winds), the fire is moving uphill, or there is a lot of dry vegetation, a fire will spread faster. Wildfires can move as fast as 7 mph in forests and up to 14 mph in grasslands.\r\n\r\nWhile that might not seem fast, it\u2019s too fast to out-run, and fire can quickly block roads, making it extremely hard to navigate and out-drive it. It\u2019s very important to evacuate when told to do so.\r\n\r\nFor more information, go to: \r\nhttps:\/\/www.forbes.com\/sites\/startswithabang\/2017\/09\/06\/the-terrifying-physics-of-how-wildfires-spread-so-fast\/?sh=1ce0199b7791\r\n\r\nTo see an example of how fast a fire can spread, go to: \r\nhttps:\/\/youtu.be\/hRDM3ir3l5M \r\n\r\nFor a timeline of fire spread, go to: \r\nhttps:\/\/www.disastercompany.com\/quickly-fire-spread\/\r\n",
+        "Contain & Control":"Containment is how much of the fire that has been enclosed by a control line. A wildfire with 25% containment means there are control lines around 25% of the fire\u2019s perimeter. Contained fires are fully enclosed and not likely to spread, but may still be burning.\r\n\r\nControl lines are natural\/man-made barriers used to stop a wildfire from spreading, also called firebreaks or fuel breaks. Sometimes, controlled burns are used to remove fuel before the wildfire reaches it. Controlled fires are contained and the lines have been reinforced, making spread very unlikely.\r\n\r\nFor containment and control updates on current fires, go to:\r\nhttps:\/\/www.fire.ca.gov\/incidents\/",
+        "Prevent\/Stop \ud83d\udd25":"Prevention limits the ability of a devastating wildfire to start. Prescribed fires get rid of dry vegetation to keep fuel from building up. Addressing climate change helps in many different ways as well. Lastly, since humans start the most fires, fire safety information campaigns and improved power line infrastructure is extremely important.\r\n\r\nFor more information on prevention, go to: \r\nhttps:\/\/www.fire.ca.gov\/programs\/resource-management\/resource-protection-improvement\/vegetation-management-program\/\r\n\r\nSuppression controls the damage an active fire can cause. Dumping water on fires is well-known, but firefighting foam can also be used. Boundaries are made by targeting unburned areas. Back-burning and vegetation removal eliminate fuel sources. Spraying fire retardant and water makes fuel harder to burn.\r\n\r\nFor more information on suppression, go to: \r\nhttps:\/\/www.enr.gov.nt.ca\/en\/services\/wildfire-operations\/suppressing-wildland-fires ",
+        "List Of Fires":"Information on current major wildfires can be found on Cal Fire\u2019s website. Past incidents can be found by year under the \u201cIncidents\u201d tab at the top. https:\/\/www.fire.ca.gov\/incidents\/",
         "Emergency Protocols":"I think you want to learn something about what to do in an emergency. If you are in an emergency and need immediate assistance, please call 911. What would you like to know about?",
-        "What if fire is near":"If you are not trapped, evacuate from the wildfire and away from where it is moving. If evacuating by car, take wide roads instead of narrow roads as they can easily be blocked. Keep the doors locked, headlights on, windows shut, and switch off ventilation.\n\nIf you are unable to evacuate, shelter in place. You can prepare your home for shelter in place by: Turning off any propane or gas.\u00a0Fill sinks and bathtubs with water. Wet your lawn and roof with water. Move flammable items away from doors and windows.\u00a0Close all doors to slow down the fire in case it makes it into your home.\n\nIf you want to know more, check out this link that I found: https:\/\/www.safehome.org\/resources\/wildfire-safety-guide\/",
-        "Treating burns":"There are 3 types of burns:\n\nFirst degree burns: Run cool water over the burn. For sunburns, apply aloe vera gel. For thermal burns, apply antibiotic cream and cover lightly with gauze. You can also take over-the-counter pain medication.\nSecond-degree burns: Treatment for second- and first-degree burns is similar. Your healthcare provider may prescribe a stronger antibiotic cream. Elevating the burned area can reduce pain and swelling.\nThird-degree burns: Third-degree burns can be life-threatening and often require skin grafts. Skin grafts replace damaged tissue with healthy skin from another of the uninjured part of the person\u2019s body. Treatment also includes extra fluids (usually given intravenously, with an IV) to keep blood pressure steady and prevent shock and dehydration.\n\nFor more information about treating burns, you can go here: https:\/\/my.clevelandclinic.org\/health\/diseases\/12063-burns",
-        "Protect from smoke":"If the location you are at is not in the path of any wildfire, you can protect yourself from smoke by wearing a respirator and keep yourself isolated in a room away from smoke in the air outside. If you are in the path of a wildfire, evacuate to a safe location. The CDC provides guidelines for protecting your health during a fire here: https:\/\/www.cdc.gov\/disasters\/wildfires\/duringfire.html",
-        "Smoke's impact?":"The biggest health threat from smoke is from fine particles. These microscopic particles can penetrate deep into your lungs. They can cause a range of health problems, from burning eyes and a runny nose to aggravated chronic heart and lung diseases.\n\nExposure to particle pollution is even linked to premature death. I found this link from the EPA that gives more information: https:\/\/www.epa.gov\/pm-pollution\/how-smoke-fires-can-affect-your-healt",
-        "Is a fire nearby?":"For currently active California fires, please check the Cal Fire Map.\n\nhttps:\/\/www.fire.ca.gov\/incidents\/ ",
-        "Fire Recovery":"I think you want to learn more about recovering from fires. I can share a couple things about that!",
-        "Community Recovery":"After a fire, many steps are taken to recover. CAL FIRE will take a number of steps including repairing road damage, installing waterbars, and addressing public safety issues. Some funds like the California Wildfire Relief fund supports the more intermediate and long-term recovery efforts after major fires.\n\nYou can find more information here:\nhttps:\/\/aftertheflames.com\/\nhttps:\/\/www.calfund.org\/wildfire-relief-fund-impact\/ \nhttps:\/\/www.readyforwildfire.org\/post-wildfire\/after-a-wildfire\/ ",
-        "Returning after fire":"If you are returning after a wildfire, check the home for hot spots, embers, and sparks (including the roof, grounds, and attic). Check for fire damage around your home. Check your possessions for fire damage. In general, it is better to discard damaged property then keep it. When in doubt, throw it out. Use the checklist available from CAL FIRE for a more detailed and thorough list.\nhttps:\/\/www.readyforwildfire.org\/post-wildfire\/after-a-wildfire\/\u00a0\nSome homeowners insurance does cover wildfire damage. Check your insurance policy to see what is covered. ",
-        "Recovery resources?":"Recovering from a wildfire is a long process that is highly dependent on the circumstances of those seeking help. Many lists of resources for recovering from a wildfire are available online! Here are a few that I found:\nCAL FIRE: https:\/\/wildfirerecovery.caloes.ca.gov\/general-info\/rebuilding\/\u00a0\nDisaster Assistance: https:\/\/www.disasterassistance.gov\/\u00a0\nFire Adapted Network: https:\/\/fireadaptednetwork.org\/recover-after-wildfire\/",
-        "Getting Involved":"I think that you want to learn more about helping out! I can answer a few questions about donating and volunteering to help.",
-        "How can I help?":"You can help victims of wildfires in many ways. If you wish to financial donate, you can donate to organizations like the American Red Cross, The Salvation Army, evacuations centers, and food banks. During and immediately following a fire, food and supply donations can be helpful, but be sure to check if those items are needed as they can often overwhelm relief organizations. Finally, if you are interested in a much more direct way of helping, you can volunteer to help in wildfire relief efforts. AirBNB\u2019s Open Homes matches hosts with disaster victims and relief workers to provide a place to stay. The Red Cross needs volunteers as well.\n\nList of reputable non-profits to donate to: https:\/\/www.charitynavigator.org\/index.cfm?bay=content.view&cpid=7574\nOther methods of getting involved: https:\/\/www.nytimes.com\/2020\/09\/18\/us\/help-wildfires-victims.html ",
-        "Where can I donate?":"Donating money to the right organizations can be difficult! I like Charity Navigator as a tool to identify the non-profits organizations that could best use that money. You can see a list of reputable organizations to donate to here:\n\nhttps:\/\/www.charitynavigator.org\/index.cfm?bay=content.view&cpid=7574\n\nThe California Office of the attorney General has a registry of Charitable Trusts website available as well!\n\nhttps:\/\/oag.ca.gov\/donations",
-        "Become a firefighter":"Becoming a firefighter takes some training and commitment. If you are interested in becoming a volunteer firefighter, the first thing you need to do is contact your local fire department. ",
-        "How to volunteer":"California has a website that helps people volunteer and help during current disasters: https:\/\/www.californiavolunteers.ca.gov\/disasters\/\n\nDuring a disaster, the American Red Cross often seeks thousands of volunteers to help with food donations, shelter upkeep, and more throughout California. https:\/\/www.redcross.org\/about-us\/our-work\/disaster-relief\/wildfire-relief.html "
+        "When \ud83d\udd25 Is Nearby":"If you can, follow all evacuation orders. If you have time, pack an emergency supply kit. N95 respirators will protect you from smoke inhalation. Fire can travel fast, so leave quickly.\r\n\r\nTake wide, main roads, since they\u2019re less likely to be blocked. In cars, keep the headlights on, windows shut, and recirculate your air rather than drawing more from outside.\r\n\r\nIf you can\u2019t evacuate, call 911 and shelter in place. It\u2019s important to stay calm and gather all house members, including pets.\r\n\r\nSheltering in a house:\r\n\u2022 Wet your lawn and roof with water\r\n\u2022 Fill sinks, bathtubs, and buckets with water\r\n\u2022 Turn off gas and propane to prevent an explosion\r\n\u2022 Move flammable items away from the house, especially doors and windows\r\n\u2022 Close all doors and windows but leave them unlocked\r\n\u2022 Stay inside your house\r\n\u2022 Don\u2019t go near outermost walls, doors, or windows\r\n\r\nSheltering in a vehicle:\r\n\u2022 Park in a place as clear of vegetation as possible\r\n\u2022 Close all windows and vents\r\n\u2022 Cover yourself with a wool blanket or jacket\r\n\u2022 Lie on the floor of the vehicle\r\n\r\nSheltering in the open:\r\n\u2022 Go to an area as clear of vegetation as possible\r\n\u2022 Find a ditch or depression on level ground, if possible\r\n\u2022 Lie face down, cover your body\r\n",
+        "Treating Burns":"If the skin is white or charred black, has a dry or waxy appearance, or if there is little to no pain, this is a very serious burn. Call 911 and urgently follow the extreme burn steps if no emergency medical aid is available.\r\n\r\n\r\nExtreme burns: Damage to all layers of skin and possibly underlying fat, muscle, and bone\r\nSymptoms include the skin being white\/charred black or waxy\/dry, the burn going deep, and little to no pain\r\nIMMEDIATELY CALL 911\r\n\r\n\r\nTreatment:\r\n\u2022 Protect from further burns; take special care with electrocutions\r\n\u2022 Check for breathing; if not breathing, start CPR\r\n\u2022 Remove tight items, like rings, from burn area and neck\r\n\u2022 Cover burn with cool, clean, moist cloth or bandage\r\n\u2022 Elevate burned area above the heart\r\n\u2022 Monitor closely for excessive bleeding, not breathing, and signs of shock\r\n\u2022 DO NOT submerge or run under water\r\n\u2022 DO NOT attempt to remove cloth stuck to the burn\r\n\u2022 DO NOT use fluffy cotton\r\n\r\nMild burns: Occurs on layers of skin only \r\nSymptoms include redness, pain, significant swelling, splotchy skin, blisters, and peeling\r\n\r\nTreatment:\r\n\u2022 Remove tight items, like rings, from burn area\r\n\u2022 Cool down burn by submerging or running under cool water or with a wet compress until pain eases\r\n\u2022 Apply lotion, moisturizer, or aloe vera to avoid drying\r\n\u2022 Cover with gauze and wrap lightly\r\n\u2022 DO NOT use ice or cold water\r\n\u2022 DO NOT use fluffy cotton or wrap tightly\r\n\u2022 DO NOT break blisters; wash out if a break occurs\r\n\r\nIf the burn is larger than 3 inches, or is on your face, scalp, genitals, hands, feet, or major joints, get same-day medical treatment or go to urgent care. It\u2019s okay to take pain medication if needed.\r\n\r\nFor more detailed information, go to:\r\nhttps:\/\/www.mayoclinic.org\/first-aid\/first-aid-burns\/basics\/art-20056649\r\n",
+        "Smoke Protection":"Wear an N95 mask. Avoid going outside or exercising as you\u2019ll inhale more smoke. When in the car, close windows and re-circulate the air. When at home, close windows and doors and stay in a room closed off from outside air. If the smoke gets too bad, you may need to evacuate.\r\n\r\nFor more information, go to:\r\nhttps:\/\/www.cdc.gov\/disasters\/wildfires\/duringfire.html\r\nTo check your air quality, go to:\r\nhttps:\/\/www.airnow.gov\/",
+        "Smoke Impact":"Smoke\u2019s biggest health threat is from fine particles. They can penetrate deep into your lungs and cause a range of health problems, from burning eyes and a runny nose to aggravated chronic heart and lung diseases.\r\n\r\nExposure to particle pollution is even linked to premature death. For more information, go to: \r\nhttps:\/\/www.epa.gov\/pm-pollution\/how-smoke-fires-can-affect-your-health ",
+        "Fire Recovery":"I think you want to learn more about recovering from fires. If you are a wildfire victim, I\u2019m sorry for the hardships you\u2019re going through. What would you like to know about?",
+        "Community After \ud83d\udd25":"Once they\u2019re done dealing with the fire, CAL FIRE will help communities in many ways, including repairing road damage, installing waterbars, and addressing public safety issues. Some organizations, like the California Wildfire Relief fund, support the more intermediate and long-term recovery efforts after major fires. Recovery relies heavily on volunteers and donations. Unfortunately, public interest often moves on before the recovery is completed, causing a lack of funds and hands to provide long-term recovery.\n\nFor more information, go to: \nhttps:\/\/aftertheflames.com\/\nhttps:\/\/www.readyforwildfire.org\/post-wildfire\/who-can-help\/\n",
+        "Going Home After \ud83d\udd25":"Even though a fire is put out, the area might still be dangerous. Natural disasters like flash floods are common, buildings and trees can have unseen structural damage, and embers can still be burning under the debris. Don\u2019t return home until you\u2019re told it\u2019s safe to do so, and be cautious once you do.\n\nWhen you get to your home, check thoroughly for gas leaks and turn off the power while you inspect everything. Avoid making any sparks. It\u2019s crucial to check every inch of your property for any embers, sparks, or hotspots. Just because you don\u2019t see anything doesn\u2019t mean it\u2019s safe. Once you\u2019ve deemed the property safe, you can turn the electricity back on. \n\nDon\u2019t drink tap water until you\u2019re told it\u2019s safe and discard any food items with fire damage. If your possessions have fire damage, it is safer to discard them.\n\nCheck your insurance policy for wildfire coverage and begin cleanup with the help of the government or a private contractor.\n\nFor CAL FIRE\u2019s return checklists, go to: \nhttps:\/\/www.readyforwildfire.org\/post-wildfire\/after-a-wildfire\/\nhttps:\/\/www.readyforwildfire.org\/post-wildfire\/returning-home\/",
+        "Get Help After \ud83d\udd25":"Dealing with the aftermath of a wildfire can be a daunting task, but there are tons of people to help out!\r\n\r\nTo start with you can check out these organizations!\r\n\r\nCAL FIRE: https:\/\/wildfirerecovery.caloes.ca.gov\/general-info\/rebuilding\/ \r\n\r\nDisaster Assistance: https:\/\/www.disasterassistance.gov\/ \r\n\r\nFire Adapted Network: https:\/\/fireadaptednetwork.org\/recover-after-wildfire\/",
+        "Getting Involved":"I think that you want to learn more about helping out! Thank you for your kindness and assistance. What would you like to know about?",
+        "How To Help":"If you wish to make a financial donation, you can donate to organizations like the American Red Cross, The Salvation Army, evacuations centers, and food banks. During and immediately following a fire, food and supply donations can be helpful, but be sure to check if those items are needed as they can often overwhelm relief organizations. \n\nIf you are interested in a much more direct way of helping, you can volunteer to help in wildfire relief efforts. AirBNB\u2019s Open Homes matches hosts with disaster victims and relief workers to provide a place to stay. The Red Cross needs volunteers as well.\n\nTo start with, here is a list of organizations in California you could donate to: https:\/\/www.nytimes.com\/2020\/09\/18\/us\/help-wildfires-victims.html \n",
+        "Donate":"Donating money to the right organizations can be difficult! Charity Navigator is a great tool that you can use to identify the non-profits organizations that could best use that money. You can see a list of reputable organizations to donate to here: \nhttps:\/\/www.charitynavigator.org\/index.cfm?bay=content.view&cpid=7574\n\nThe California Office of the Attorney General has a registry of Charitable Trusts website available as well: \nhttps:\/\/oag.ca.gov\/donations        ",
+        "Become A Firefighter":"Becoming a firefighter takes some training and commitment. You need to be at least 18 years old and have a valid driver\u2019s license. If you are interested in becoming a volunteer firefighter, the first thing you should do is contact your local fire department. You can learn a bit more about the process, requirements, and duties for California at this website!\r\nhttps:\/\/www.fireandrescuetraining.ca.gov\/fire-academy-faqs \r\n\r\nIf you want to learn more about how it is to be a firefighter, here is A Day in the Life of a Forest Firefighter:\r\nhttps:\/\/www.npr.org\/templates\/story\/story.php?storyId=112440766\r\n",
+        "Volunteer":"Before volunteering yourself, you should make sure that you are safe and prepared in case of an emergency. If you are in a place affected by wildfire, you can check on a neighbor and offer to help them evacuate if needed. You can also help buy groceries or run errands for those who may need it. Here is a link to a website outlining ways to help during current disasters: \r\nhttps:\/\/www.californiavolunteers.ca.gov\/disasters\/\r\n\r\nDuring a disaster, the American Red Cross often seeks thousands of volunteers to help with food donations, shelter upkeep, and more throughout California. You can learn more about their volunteer opportunities and sign up here:\r\nhttps:\/\/www.redcross.org\/volunteer\/become-a-volunteer\/urgent-need-for-volunteers.html\r\n"
     },
     "Links":{
         "Who created you?":[
@@ -85,208 +84,219 @@
             "Getting Involved"
         ],
         "Fire Preparation":[
-            "How to prep home?",
-            "What's my fire risk",
-            "Fire Supply Kit?",
-            "Prepare for evac?",
+            "Evacuations",
+            "Emergency Supply Kit",
+            "Prepare Your Home",
+            "My Fire Risk",
             "No, something else"
         ],
-        "Prepare for evac?":[
-            "Fire Supply Kit?",
-            "When is fire season"
+        "Evacuations":[
+            "Emergency Supply Kit",
+            "Fire Season",
+            "My Fire Risk",
+            "When \ud83d\udd25 Is Nearby"
         ],
-        "Fire Supply Kit?":[
-            "Prepare for evac?",
-            "What's my fire risk",
-            "How to prep home?"
+        "Emergency Supply Kit":[
+            "Evacuations",
+            "Prepare Your Home",
+            "My Fire Risk",
+            "Treating Burns"
         ],
-        "How to prep home?":[
-            "What's my fire risk",
-            "When is fire season"
+        "Prepare Your Home":[
+            "My Fire Risk",
+            "Fire Season",
+            "Going Home After \ud83d\udd25"
         ],
-        "What's my fire risk":[
-            "How to prep home?",
-            "What's my fire risk",
-            "When is fire season"
+        "My Fire Risk":[
+            "Prepare Your Home",
+            "Fire Frequency",
+            "Fire Season",
+            "Community After \ud83d\udd25"
         ],
         "Fire Ecology":[
-            "How do fires start?",
-            "Why so many fires?",
-            "Climate Change?",
-            "When is fire season",
-            "What about wildlife",
-            "How does \ud83d\udd25 spread?",
-            "What is \"contained\"",
-            "Prevent or stop \ud83d\udd25?",
-            "List of fires",
+            "How \ud83d\udd25 Starts",
+            "Fire Frequency",
+            "Climate Change",
+            "Fire Season",
+            "Wildlife",
+            "How \ud83d\udd25 Spreads",
+            "Contain & Control",
+            "Prevent\/Stop \ud83d\udd25",
+            "List Of Fires",
             "No, something else"
         ],
-        "How do fires start?":[
-            "What's my fire risk",
-            "When is fire season",
-            "Why so many fires?",
-            "Climate Change?"
+        "How \ud83d\udd25 Starts":[
+            "My Fire Risk",
+            "Fire Frequency",
+            "Climate Change",
+            "Fire Season"
         ],
-        "Why so many fires?":[
-            "How do fires start?",
-            "Climate Change?",
-            "Prevent or stop \ud83d\udd25?"
+        "Fire Frequency":[
+            "How \ud83d\udd25 Starts",
+            "Climate Change",
+            "Prevent\/Stop \ud83d\udd25",
+            "Wildlife"
         ],
-        "Climate Change?":[
-            "How do fires start?",
-            "Why so many fires?",
-            "When is fire season"
+        "Climate Change":[
+            "How \ud83d\udd25 Starts",
+            "Fire Frequency",
+            "Fire Season",
+            "Become A Firefighter"
         ],
-        "When is fire season":[
-            "Climate Change?",
-            "List of fires",
-            "What's my fire risk"
+        "Fire Season":[
+            "My Fire Risk",
+            "Climate Change",
+            "List Of Fires",
+            "Wildlife"
         ],
-        "What about wildlife":[
-            "Climate Change?",
-            "Prevent or stop \ud83d\udd25?",
-            "Prepare for evac?"
+        "Wildlife":[
+            "Climate Change",
+            "Prevent\/Stop \ud83d\udd25",
+            "Contain & Control",
+            "Evacuations"
         ],
-        "How does \ud83d\udd25 spread?":[
-            "What is \"contained\"",
-            "Prepare for evac?",
-            "Fire Supply Kit?"
+        "How \ud83d\udd25 Spreads":[
+            "Evacuations",
+            "Emergency Supply Kit",
+            "Contain & Control",
+            "When \ud83d\udd25 Is Nearby"
         ],
-        "What is \"contained\"":[
-            "How does \ud83d\udd25 spread?",
-            "Prepare for evac?",
-            "Prevent or stop \ud83d\udd25?"
+        "Contain & Control":[
+            "Evacuations",
+            "How \ud83d\udd25 Spreads",
+            "Prevent\/Stop \ud83d\udd25",
+            "Become A Firefighter"
         ],
-        "Prevent or stop \ud83d\udd25?":[
-            "How do fires start?",
-            "How does \ud83d\udd25 spread?",
-            "What is \"contained\""
+        "Prevent\/Stop \ud83d\udd25":[
+            "How \ud83d\udd25 Starts",
+            "How \ud83d\udd25 Spreads",
+            "Contain & Control"
         ],
-        "List of fires":[
-            "Prepare for evac?",
-            "Why so many fires?",
-            "Prevent or stop \ud83d\udd25?"
+        "List Of Fires":[
+            "Evacuations",
+            "Fire Frequency",
+            "Prevent\/Stop \ud83d\udd25",
+            "How \ud83d\udd25 Spreads"
         ],
         "Emergency Protocols":[
-            "What if fire is near",
-            "Treating burns",
-            "Protect from smoke",
-            "Smoke's impact?",
+            "When \ud83d\udd25 Is Nearby",
+            "Treating Burns",
+            "Smoke Protection",
+            "Smoke Impact",
             "No, something else"
         ],
-        "What if fire is near":[
-            "Prepare for evac?",
-            "Protect from smoke",
-            "Smoke's impact?",
-            "Is a fire nearby?"
+        "When \ud83d\udd25 Is Nearby":[
+            "Evacuations",
+            "Emergency Supply Kit",
+            "Smoke Protection",
+            "Smoke Impact",
+            "List Of Fires"
         ],
-        "Treating burns":[
-            "Protect from smoke",
-            "Smoke's impact?",
-            "Returning after fire",
-            "List of fires"
+        "Treating Burns":[
+            "Smoke Protection",
+            "Smoke Impact",
+            "Going Home After \ud83d\udd25",
+            "List Of Fires"
         ],
-        "Protect from smoke":[
-            "Smoke's impact?",
-            "Is a fire nearby?",
-            "What's my fire risk"
+        "Smoke Protection":[
+            "Smoke Impact",
+            "Treating Burns",
+            "How \ud83d\udd25 Starts",
+            "List Of Fires"
         ],
-        "Smoke's impact?":[
-            "Protect from smoke",
-            "What about wildlife",
-            "Is a fire nearby?"
-        ],
-        "Is a fire nearby?":[
-            "List of fires",
-            "What if fire is near",
-            "Protect from smoke"
+        "Smoke Impact":[
+            "Smoke Protection",
+            "When \ud83d\udd25 Is Nearby",
+            "Wildlife",
+            "Treating Burns",
+            "List Of Fires"
         ],
         "Fire Recovery":[
-            "Community Recovery",
-            "Returning after fire",
-            "Recovery resources?",
+            "Community After \ud83d\udd25",
+            "Going Home After \ud83d\udd25",
+            "Get Help After \ud83d\udd25",
             "No, something else"
         ],
-        "Community Recovery":[
-            "Returning after fire",
-            "Recovery resources?",
-            "Prevent or stop \ud83d\udd25?",
+        "Community After \ud83d\udd25":[
+            "Going Home After \ud83d\udd25",
+            "Get Help After \ud83d\udd25",
+            "Prevent\/Stop \ud83d\udd25",
             "Getting Involved"
         ],
-        "Returning after fire":[
-            "Community Recovery",
-            "Recovery resources?",
-            "How to prep home?"
+        "Going Home After \ud83d\udd25":[
+            "Community After \ud83d\udd25",
+            "Get Help After \ud83d\udd25",
+            "Prepare Your Home"
         ],
-        "Recovery resources?":[
-            "Where can I donate?",
-            "Community Recovery",
-            "Returning after fire"
+        "Get Help After \ud83d\udd25":[
+            "Donate",
+            "Community After \ud83d\udd25",
+            "Going Home After \ud83d\udd25"
         ],
         "Getting Involved":[
-            "How can I help?",
-            "Where can I donate?",
-            "Become a firefighter",
-            "How to volunteer"
+            "How To Help",
+            "Donate",
+            "Become A Firefighter",
+            "Volunteer",
+            "No, something else"
         ],
-        "How can I help?":[
-            "Where can I donate?",
-            "Become a firefighter",
-            "How to volunteer"
+        "How To Help":[
+            "Donate",
+            "Become A Firefighter",
+            "Volunteer"
         ],
-        "Where can I donate?":[
-            "How can I help?",
-            "How to volunteer",
+        "Donate":[
+            "How To Help",
+            "Volunteer",
             "Fire Preparation"
         ],
-        "Become a firefighter":[
-            "Where can I donate?",
-            "How can I help?",
-            "How to volunteer"
+        "Become A Firefighter":[
+            "Donate",
+            "How To Help",
+            "Volunteer"
         ],
-        "How to volunteer":[
-            "How can I help?",
-            "Is a fire nearby?",
+        "Volunteer":[
+            "How To Help",
+            "Donate",
             "Fire Preparation"
         ]
     },
     "Topic":{
         "Who created you?":"Other",
         "Help":"Other",
-        "greetings":"",
-        "thanks":"",
-        "bye":"",
-        "unknown":"",
+        "greetings":"Other",
+        "thanks":"Other",
+        "bye":"Other",
+        "unknown":"Other",
         "No, something else":"Other",
         "Fire Preparation":"Fire Preparation",
-        "Prepare for evac?":"Fire Preparation",
-        "Fire Supply Kit?":"Fire Preparation",
-        "How to prep home?":"Fire Preparation",
-        "What's my fire risk":"Fire Preparation",
+        "Evacuations":"Fire Preparation",
+        "Emergency Supply Kit":"Fire Preparation",
+        "Prepare Your Home":"Fire Preparation",
+        "My Fire Risk":"Fire Preparation",
         "Fire Ecology":"Fire Ecology",
-        "How do fires start?":"Fire Ecology",
-        "Why so many fires?":"Fire Ecology",
-        "Climate Change?":"Fire Ecology",
-        "When is fire season":"Fire Ecology",
-        "What about wildlife":"Fire Ecology",
-        "How does \ud83d\udd25 spread?":"Fire Ecology",
-        "What is \"contained\"":"Fire Ecology",
-        "Prevent or stop \ud83d\udd25?":"Fire Ecology",
-        "List of fires":"Fire Ecology",
+        "How \ud83d\udd25 Starts":"Fire Ecology",
+        "Fire Frequency":"Fire Ecology",
+        "Climate Change":"Fire Ecology",
+        "Fire Season":"Fire Ecology",
+        "Wildlife":"Fire Ecology",
+        "How \ud83d\udd25 Spreads":"Fire Ecology",
+        "Contain & Control":"Fire Ecology",
+        "Prevent\/Stop \ud83d\udd25":"Fire Ecology",
+        "List Of Fires":"Fire Ecology",
         "Emergency Protocols":"Emergency Protocols",
-        "What if fire is near":"Emergency Protocols",
-        "Treating burns":"Emergency Protocols",
-        "Protect from smoke":"Emergency Protocols",
-        "Smoke's impact?":"Emergency Protocols",
-        "Is a fire nearby?":"Emergency Protocols",
+        "When \ud83d\udd25 Is Nearby":"Emergency Protocols",
+        "Treating Burns":"Emergency Protocols",
+        "Smoke Protection":"Emergency Protocols",
+        "Smoke Impact":"Emergency Protocols",
         "Fire Recovery":"Fire Recovery",
-        "Community Recovery":"Fire Recovery",
-        "Returning after fire":"Fire Recovery",
-        "Recovery resources?":"Fire Recovery",
+        "Community After \ud83d\udd25":"Fire Recovery",
+        "Going Home After \ud83d\udd25":"Fire Recovery",
+        "Get Help After \ud83d\udd25":"Fire Recovery",
         "Getting Involved":"Getting Involved",
-        "How can I help?":"Getting Involved",
-        "Where can I donate?":"Getting Involved",
-        "Become a firefighter":"Getting Involved",
-        "How to volunteer":"Getting Involved"
+        "How To Help":"Getting Involved",
+        "Donate":"Getting Involved",
+        "Become A Firefighter":"Getting Involved",
+        "Volunteer":"Getting Involved"
     }
 }
